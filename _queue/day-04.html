@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- DRAFT: delete the next line when moving this file to the root to publish -->
+<base href="../">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Day 4: Rockstar Games account</title>
+<meta name="description" content="The Rockstar Games account, once called Social Club, broken down as a product: one login across every Rockstar game. Day 4 of 9 Rockstar products.">
+<meta property="og:title" content="Day 4: The Rockstar Games account, the product once called Social Club">
+<meta property="og:image" content="https://cercit.github.io/GTAVI/assets/a-hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,700..900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="days.js"></script>
+<script src="account.js"></script>
+</head>
+<body class="theme-account">
+
+<header class="nav">
+  <a class="brand" href="index.html"><img src="assets/rockstar-logo.png" alt="Rockstar Games"><span>9 Products</span></a>
+  <nav class="links"><a href="index.html#select">All days</a><a href="https://samsm.vercel.app">About me</a></nav>
+</header>
+
+<section class="acct-hero" id="hero">
+  <div class="art" style="background-image:url('assets/a-hero.jpg')"></div>
+  <div class="wrap">
+    <div>
+      <div class="meta"><span class="label">Product 04 / 09</span><span class="label">14 November</span></div>
+      <h1 class="display">Rockstar Games account<span class="was">once called <s>Social Club</s></span></h1>
+      <p class="lede">One login across every Rockstar game. It started in 2008 as a stats page for GTA IV, became the thing that carries your character from one console to the next, and in 2023 Rockstar quietly retired its name.</p>
+    </div>
+    <div>
+      <div class="idcard" id="idcard" aria-label="A player ID card that flips from Social Club to Rockstar Games account">
+        <div class="id-inner">
+          <div class="id-face id-old">
+            <div class="top"><span>Social Club</span><span class="chip"></span></div>
+            <div class="photo" style="background-image:url('assets/a-avatar.jpg')"></div>
+            <dl><div><dt>Member since</dt><dd>April 2008</dd></div><div><dt>Crew</dt><dd>Joined with Max Payne 3</dd></div><div><dt>Linked</dt><dd>GTA IV · GTA V · GTA Online</dd></div></dl>
+            <div class="foot">Stats · leaderboards · crews</div>
+          </div>
+          <div class="id-face id-new">
+            <div class="top"><span>Rockstar Games</span><span class="badge">Account</span></div>
+            <div class="photo" style="background-image:url('assets/a-avatar.jpg')"></div>
+            <dl><div><dt>Same ID since</dt><dd>April 2008</dd></div><div><dt>Carries</dt><dd>Characters · money · cars</dd></div><div><dt>Linked</dt><dd>Consoles · PC · GTA+</dd></div></dl>
+            <div class="foot">Renamed November 2023</div>
+          </div>
+        </div>
+      </div>
+      <div class="era" role="group" aria-label="Show the card before or after the rename">
+        <button data-era="then" aria-pressed="true">Before 2023</button><button data-era="now" aria-pressed="false">After 2023</button>
+      </div>
+    </div>
+  </div>
+  <div class="toasts" id="toasts" aria-hidden="true">
+    <div class="toast"><i>C</i><div>Crew invite accepted<small>Your crew follows you into GTA Online</small></div></div>
+    <div class="toast"><i>→</i><div>Character moved to PS5<small>Money, cars and progress came too</small></div></div>
+    <div class="toast"><i>+</i><div>GTA+ benefits unlocked<small>Linked to your Rockstar Games account</small></div></div>
+    <div class="toast"><i>ID</i><div>Social Club is now Rockstar Games<small>Same ID, same password</small></div></div>
+  </div>
+</section>
+
+<main>
+<div class="wrap">
+  <dl class="dossier rise">
+    <div><dt class="label">Type</dt><dd>Free player account and community layer</dd></div>
+    <div><dt class="label">Launched</dt><dd>29 Apr 2008, with GTA IV, as Social Club</dd></div>
+    <div><dt class="label">Renamed</dt><dd>Nov 2023: now simply a Rockstar Games account</dd></div>
+    <div><dt class="label">Price</dt><dd>Free. Always has been</dd></div>
+    <div><dt class="label">Makes money by</dt><dd>Keeping players, friends and progress inside Rockstar's world</dd></div>
+    <div><dt class="label">PM concept</dt><dd>Network effects, and retiring a brand</dd></div>
+  </dl>
+
+  <section class="chapter">
+    <div class="chapter-head"><span class="num">01</span><h2 class="display">Who it's for</h2></div>
+    <div class="col"><p>Rockstar announced it in March 2008 as a home for GTA IV "and all future Rockstar Games titles". Four kinds of players ended up depending on it.</p></div>
+    <div class="people">
+      <div class="person rise"><span class="av">L</span><div><h4>Long-haul GTA Online players</h4><p>Their character, money and cars have to survive every new console. The account is how they move.</p></div></div>
+      <div class="person rise"><span class="av">C</span><div><h4>Crews</h4><p>Since Max Payne 3 in 2012, a crew made in one game carries into the next, including GTA Online.</p></div></div>
+      <div class="person rise"><span class="av">S</span><div><h4>Stat chasers</h4><p>Leaderboards, awards and 100% progress, the reason Social Club existed in 2008.</p></div></div>
+      <div class="person rise"><span class="av">P</span><div><h4>PC players</h4><p>On PC the account is required, and since 2019 it comes with Rockstar's own launcher.</p></div></div>
+    </div>
+  </section>
+
+  <section class="chapter col">
+    <div class="chapter-head"><span class="num">02</span><h2 class="display">The problem it solved</h2></div>
+    <p><strong>For players:</strong> your progress shouldn't belong to one console. In March 2022, when GTA V moved to PS5 and Xbox Series, players brought their GTA Online characters, money, cars, properties and the jobs they had made, through this account.</p>
+    <p><strong>For Rockstar:</strong> without it, every player relationship belongs to Sony, Microsoft or Steam. With it, Rockstar knows its players directly, can reward them across games, link partner offers like Twitch Prime, and hang a subscription like GTA+ on the same login.</p>
+  </section>
+</div>
+
+<section class="band" style="background-image:url('assets/a-beach.jpg')">
+  <div class="wrap"><p class="quote rise">The game is what you play. The account is who you are in it.</p></div>
+</section>
+
+<div class="wrap">
+  <section class="chapter">
+    <div class="chapter-head"><span class="num">03</span><h2 class="display">How it makes money</h2></div>
+    <div class="col"><p>It's free, and Take-Two has never published a user count or revenue for it. The account earns by connecting things that do earn.</p></div>
+    <div class="flow rise">
+      <div class="src"><b>One account</b><span>free, since 2008</span></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <ul>
+        <li><b>GTA Online</b>: progress that survives a console change keeps people spending</li>
+        <li><b>GTA+</b>: a monthly subscription attached to the same login</li>
+        <li><b>The PC store</b>: the 2019 launcher sells games directly</li>
+        <li><b>Partners</b>: link Twitch Prime and other services for rewards</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-head"><span class="num">04</span><h2 class="display">One login, every game</h2></div>
+    <div class="col"><p>Every Rockstar game added to the same account brings its players into one network, and their friends and crews come with them. Add the games in order and watch it grow.</p></div>
+    <div class="netbox rise">
+      <canvas id="net" aria-label="A network: one account in the middle, each game adds its players and links them to players of earlier games"></canvas>
+      <div class="netbar" role="group" aria-label="Add games to the network">
+        <button data-k="0" data-game="GTA IV" data-year="2008" data-players="14" data-note="Social Club launches with GTA IV: stats, leaderboards, awards." aria-pressed="false">2008 · GTA IV</button>
+        <button data-k="1" data-game="Max Payne 3" data-year="2012" data-players="8" data-note="Crews arrive, and they carry over from game to game." aria-pressed="false">2012 · Crews</button>
+        <button data-k="2" data-game="GTA V + Online" data-year="2013" data-players="26" data-note="GTA Online: your crew, friends and progress live on the account." aria-pressed="false">2013 · GTA V</button>
+        <button data-k="3" data-game="RDR2" data-year="2018" data-players="14" data-note="A second open world on the same login. Your friends are already there." aria-pressed="false">2018 · RDR2</button>
+        <button data-k="4" data-game="Launcher" data-year="2019" data-players="8" data-note="PC players get one app for every Rockstar game, on the same account." aria-pressed="false">2019 · Launcher</button>
+        <button data-k="5" data-game="GTA VI" data-year="2026" data-players="22" data-note="If GTA VI's online world uses the same account, it starts with every link made since 2008. Rockstar hasn't said yet." aria-pressed="false">2026 · GTA VI</button>
+        <button class="reset" id="net-reset">Reset</button>
+      </div>
+      <div class="netinfo"><span id="net-note" data-start="Press a year to add that game.">Press a year to add that game.</span><b id="net-links">0 games</b></div>
+    </div>
+    <p class="bcg-note">An illustration of how a shared account compounds. Dots are not real player numbers.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-head"><span class="num">05</span><h2 class="display">Activity log</h2></div>
+    <ul class="feed">
+      <li><span class="ic">SC</span><span><span class="when">27 Mar 2008</span><span class="what">Rockstar announces Social Club for GTA IV and future games</span></span></li>
+      <li class="big"><span class="ic">IV</span><span><span class="when">29 Apr 2008</span><span class="what">Live with GTA IV: stats, leaderboards, competitions, awards</span></span></li>
+      <li><span class="ic">C</span><span><span class="when">May 2012</span><span class="what">Crews launch with Max Payne 3, built to cross games</span></span></li>
+      <li><span class="ic">PC</span><span><span class="when">Apr 2015</span><span class="what">GTA V on PC, with the account required to play</span></span></li>
+      <li><span class="ic">▲</span><span><span class="when">17 Sep 2019</span><span class="what">Rockstar Games Launcher released on PC</span></span></li>
+      <li><span class="ic">→</span><span><span class="when">Mar 2022</span><span class="what">GTA Online characters move to PS5 and Xbox Series through the account. GTA+ launches on the same login</span></span></li>
+      <li class="big"><span class="ic">ID</span><span><span class="when">Nov 2023</span><span class="what">"Social Club" disappears from the website. Accounts become Rockstar Games accounts</span></span></li>
+      <li><span class="ic">i</span><span><span class="when">May 2024</span><span class="what">Rockstar Support confirms the rename: same ID, same password</span></span></li>
+      <li><span class="ic">↪</span><span><span class="when">2025</span><span class="what">Old Social Club addresses reportedly redirect to rockstargames.com; detailed profiles and media no longer shown</span></span></li>
+    </ul>
+  </section>
+</div>
+
+<section class="band band-right" style="background-image:url('assets/a-motel.jpg')">
+  <div class="wrap"><p class="quote rise">Fifteen years of a name, retired without a goodbye post.</p></div>
+</section>
+
+<div class="wrap">
+  <section class="chapter col">
+    <div class="chapter-head"><span class="num">06</span><h2 class="display">What I'd change</h2></div>
+    <p>Folding Social Club into one Rockstar Games account was a good decision. One brand, one login, less confusion before the biggest launch Rockstar has ever had.</p>
+    <p>The way it happened is what I'd change. Players noticed the name was gone before Rockstar said anything; the support article explaining it came months later. Then, by most reports, the old profile pages with years of screenshots and videos stopped showing. For a product whose whole job is to hold your identity, that's the one thing it shouldn't drop quietly.</p>
+    <p>As a PM, I'd ship a rename like a launch: say it first, say what stays the same, and give people a way to download what they made before anything goes away.</p>
+  </section>
+
+  <section class="concept">
+    <span class="label">PM concept · Learn this</span>
+    <h3>Network effects, and retiring a brand</h3>
+    <div class="col">
+      <p><strong>Network effects</strong> mean a product gets more valuable as more people use it. One shared account means your friends, crew and progress are already waiting in Rockstar's next game, which makes the next game easier to start and harder to leave.</p>
+      <p><strong>Retiring a brand</strong> is the other half. Companies choose between a "house of brands", many separate names, and a "branded house", one parent name on everything. Rockstar moved from the first to the second.</p>
+    </div>
+    <div class="brands">
+      <div><h4>House of brands</h4><p>Each product has its own name and identity. Flexible, but the names compete for attention.</p><span class="ex">Rockstar before 2023: Social Club + Launcher + GTA+</span></div>
+      <div><h4>Branded house</h4><p>One parent name on everything. Simpler for customers, and every product builds the same brand.</p><span class="ex">Rockstar after 2023: a Rockstar Games account</span></div>
+    </div>
+    <div class="col" style="margin-top:20px">
+      <p>The question for any PM: when a product's name is famous, is retiring it worth the confusion? Here the answer was yes. The account mattered more than the label.</p>
+    </div>
+  </section>
+
+  <p class="sources">Facts from Rockstar Newswire, Rockstar Support, Take-Two Interactive and press coverage (IGN, Engadget, GTABase), cross-checked across three research sources and a web check on 11 November 2026. Take-Two does not publish user numbers or revenue for the account, so this page doesn't either.</p>
+</div>
+
+<a class="up-next locked" href="index.html#select" style="background-image:url('assets/d05.jpg')">
+  <div class="wrap">
+    <span class="label">Up next · Product 05 · 15 November</span>
+    <h2 class="display">Rockstar Games Launcher</h2>
+    <p>Owning the PC store instead of renting one.</p>
+  </div>
+</a>
+</main>
+
+<footer>
+  <b>Independent product breakdown by Sameer Mittimani.</b><br>
+  Artwork and logos © Rockstar Games / Take-Two Interactive.
+</footer>
+</body>
+</html>
