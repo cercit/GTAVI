@@ -218,3 +218,13 @@ footer b { color: var(--muted); font-weight: 600; }
   .countdown { gap: 24px; }
   .countdown b { font-size: 40px; }
 }
+
+/* Band with the line on the sky and the car below it */
+.band-top { min-height: 0; align-items: flex-start; background-size: 100% auto; background-position: center bottom; }
+.band-top .wrap { padding: 64px 24px calc(52.8vw - 13vw); }
+.band-top::before { background: linear-gradient(180deg, var(--bg) 0%, rgba(11,7,18,.7) 20%, rgba(11,7,18,.15) 42%, rgba(11,7,18,0) 70%, var(--bg) 100%); }
+@media (max-width: 720px) {
+  .band-top { min-height: 0; padding-bottom: 0; background-size: 175% auto; background-position: 45% 100%; }
+  .band-top .wrap { padding: 48px 18px calc(92vw + 20px); }
+  .band-top::before { background: linear-gradient(180deg, var(--bg) 0%, var(--bg) 40%, rgba(11,7,18,0) 56%, rgba(11,7,18,0) 82%, var(--bg) 100%); }
+}
