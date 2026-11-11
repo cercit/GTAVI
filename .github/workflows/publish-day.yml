@@ -4,12 +4,14 @@ name: Publish today's product
 # in case GitHub starts the job late.
 #   12 Nov: 09:15 UTC = 2:45 pm IST (live by 3 pm, post at 4 pm)
 #   13 Nov: 08:15 UTC = 1:45 pm IST (live by 2 pm, post at 3 pm)
-#   14-19 Nov: 09:15 UTC = 2:45 pm IST (change per day if the post time changes)
+#   14 Nov: 06:15 UTC = 11:45 am IST (live by 12 pm, post at 1 pm)
+#   15-19 Nov: 09:15 UTC = 2:45 pm IST (change per day if the post time changes)
 on:
   schedule:
     - cron: "15 9 12 11 *"
     - cron: "15 8 13 11 *"
-    - cron: "15 9 14-19 11 *"
+    - cron: "15 6 14 11 *"
+    - cron: "15 9 15-19 11 *"
   workflow_dispatch:
     inputs:
       day:
