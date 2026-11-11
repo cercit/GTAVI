@@ -256,24 +256,26 @@ footer b { color: var(--muted); font-weight: 600; }
    Day 1 (GTA V) uses the default sunset-dark theme above.
    ========================================================= */
 
-/* Day 2: GTA Online. Cream from the artwork, ONLINE-logo red,
-   black "mission text" boxes like the in-game subtitles. */
+/* Day 2: GTA Online. Cream from the artwork, Rockstar yellow,
+   black "mission text" boxes like the in-game subtitles.
+   Yellow is used as a fill with black text on it; text on cream uses dark amber. */
 body.theme-online {
   --bg: #efe7da; --bg-2: #e3d9c9; --bg-rgb: 239,231,218;
   --text: #121212; --soft: #2b2723; --muted: #6c6358; --dim: #998f81;
   --line: rgba(18,18,18,.16);
-  --pink: #e1061b; --orange: #e1061b; --teal: #121212;
-  --sunset: linear-gradient(90deg, #e1061b, #ff3d2e);
+  --y: #fcaf17; --y-ink: #8a5a00;
+  --pink: var(--y-ink); --orange: var(--y-ink); --teal: #121212;
+  --sunset: linear-gradient(90deg, #fcaf17, #ffcf4a);
   --grain: .035;
 }
-.theme-online ::selection { background: #e1061b; color: #fff; }
+.theme-online ::selection { background: #fcaf17; color: #121212; }
 .theme-online .nav .brand span { color: #121212; }
 .theme-online .nav.solid { box-shadow: 0 1px 0 var(--line); }
 
-/* Title: GTA in black, ONLINE in the red logo box */
+/* Title: GTA in black, ONLINE in a Rockstar-yellow box */
 .theme-online .tag-red {
-  display: inline-block; background: #e1061b; color: #fff; padding: 0 .12em .02em;
-  -webkit-text-stroke: 0; box-shadow: .06em .06em 0 #121212; transform: skew(-4deg);
+  display: inline-block; background: #fcaf17; color: #121212; padding: 0 .12em .02em;
+  box-shadow: .06em .06em 0 #121212; transform: skew(-4deg);
 }
 .theme-online .hero .lede { color: var(--soft); font-weight: 500; }
 .theme-online .hero::before {
@@ -282,19 +284,19 @@ body.theme-online {
     linear-gradient(90deg, rgba(var(--bg-rgb),.6) 0%, rgba(var(--bg-rgb),0) 45%);
 }
 
-/* Chapter numbers as red rank badges */
+/* Chapter numbers as yellow rank badges */
 .theme-online .chapter-head { align-items: center; }
 .theme-online .chapter-head .num {
   display: inline-grid; place-items: center; width: 46px; height: 46px; border-radius: 50%;
-  background: #e1061b; color: #fff; font-size: 20px; box-shadow: 3px 3px 0 #121212;
+  background: #fcaf17; color: #121212; font-size: 20px; box-shadow: 3px 3px 0 #121212;
 }
 
 /* Product card as an in-game player-stats panel */
 .theme-online .dossier {
-  background: #121212; color: #f4efe6; border-top: 4px solid #e1061b; padding: 6px 24px 10px;
+  background: #121212; color: #f4efe6; border-top: 4px solid #fcaf17; padding: 6px 24px 10px;
 }
 .theme-online .dossier div { border-bottom-color: rgba(255,255,255,.12); }
-.theme-online .dossier .label { color: #e1061b; }
+.theme-online .dossier .label { color: #fcaf17; }
 
 /* Banner lines as black mission-text boxes */
 .theme-online .band .quote {
@@ -306,7 +308,7 @@ body.theme-online {
 
 /* Money: three job cards */
 .theme-online .ways { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-.theme-online .ways li { display: block; border: 0; background: #fff; padding: 22px; box-shadow: 4px 4px 0 #121212; border-top: 4px solid #e1061b; }
+.theme-online .ways li { display: block; border: 0; background: #fff; padding: 22px; box-shadow: 4px 4px 0 #121212; border-top: 6px solid #fcaf17; }
 .theme-online .ways li:last-child { border-bottom: 0; }
 .theme-online .ways .k { display: block; margin-bottom: 8px; color: #121212; }
 
@@ -315,19 +317,21 @@ body.theme-online {
 .theme-online .stat, .theme-online .stat + .stat { background: #121212; color: #fff; padding: 24px; border: 0; }
 .theme-online .stat span { color: #bdb4a8; }
 
-/* Timeline dates in red */
-.theme-online .ledger .when { color: #e1061b; }
+/* Timeline dates in dark amber (readable on cream) */
+.theme-online .ledger .when { color: var(--y-ink); }
+.theme-online .ledger li.big .when { color: #121212; background: #fcaf17; padding: 2px 8px; justify-self: start; }
 
 /* Concept block */
 .theme-online .concept { border-top: 4px solid #121212; }
-.theme-online .concept .label { color: #e1061b; }
+.theme-online .concept .label { color: var(--y-ink); }
 .theme-online .shape .bars i { background: #c9bfb0; }
 .theme-online .shape .live .bars i { background: #121212; }
-.theme-online .shape .live .bars i.spike { background: #e1061b; }
+.theme-online .shape .live .bars i.spike { background: #fcaf17; }
 
 /* Up next keeps the dark art strip */
 .theme-online .up-next::before { background: linear-gradient(90deg, rgba(18,18,18,.95) 0%, rgba(18,18,18,.6) 45%, rgba(18,18,18,.1) 100%); }
 .theme-online .up-next, .theme-online .up-next .label { color: #fff; }
+.theme-online .up-next .label { color: #fcaf17; }
 .theme-online .up-next p { color: #ddd5c8; }
 
 @media (max-width: 720px) {
