@@ -4,9 +4,13 @@ A 9-day product breakdown of the decisions behind GTA VI, one page per day from 
 
 ## Publishing a day
 
-1. The page is built ahead in `drafts/day-0N.html` (not pushed).
-2. On its day, move it to the root and set `live: true` for that day in `days.js`.
-3. Commit and push.
+Each day publishes itself at **2:45 pm IST** (GitHub Action `publish-day.yml`, 12–19 Nov).
+
+1. Build the page ahead in `drafts/` (not pushed), then move it to `_queue/day-NN.html` and push.
+   `_queue/` starts with `_`, so GitHub Pages doesn't serve it: it stays hidden.
+2. At 2:45 pm IST the Action runs `tools/publish-day.sh`: moves the page to the root, sets `live: true`
+   in `days.js`, links the previous day's "Up next" strip, commits and pushes.
+3. To test without publishing: Actions → "Publish today's product" → Run workflow (dry run ticked).
 
 Artwork in `assets/` comes from the official GTA VI wallpaper pack, resized for the web. Spare postcards (Vice City, Leonida Keys, Port Gellhorn, Ambrosia, Grassrivers, Mount Kalaga) are kept outside the repo for later days.
 

@@ -1,5 +1,5 @@
 // One entry per day = one Rockstar product, broken down from a PM's view.
-// To publish a day: move drafts/day-0N.html to the root, set live: true, commit and push.
+// Days publish themselves at 2:45 pm IST from _queue/ (see README and tools/publish-day.sh).
 // Art: assets/dNN.jpg (full) and assets/t-dNN.jpg (thumbnail).
 const DAYS = [
   { n: 1, date: "11 Nov", file: "day-01.html", live: true,  title: "GTA V",

@@ -1,0 +1,46 @@
+name: Publish today's product
+
+# 09:15 UTC = 2:45 pm IST, every day 12–19 November.
+# Leaves a 15-minute buffer so the page is live by 3 pm even if GitHub starts the job late.
+on:
+  schedule:
+    - cron: "15 9 12-19 11 *"
+  workflow_dispatch:
+    inputs:
+      day:
+        description: "Day number to publish (blank = work it out from today's date)"
+        required: false
+      dry_run:
+        description: "Dry run only (show the changes, publish nothing)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Publish the day
+        run: |
+          chmod +x tools/publish-day.sh
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then
+            tools/publish-day.sh ${{ inputs.day }} --dry-run
+            exit 0
+          fi
+          tools/publish-day.sh ${{ inputs.day }}
+          if git diff --cached --quiet; then echo "Nothing to publish."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Publish today's product (scheduled)"
+          git push
+
+      - name: Ask GitHub Pages to rebuild
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Pages rebuild request skipped"
