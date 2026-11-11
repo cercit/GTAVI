@@ -30,6 +30,24 @@ if [ ! -f "$SRC" ]; then
   echo "ERROR: $SRC is not queued, so day $NN cannot be published."; exit 1
 fi
 
+# Dry run: work on throwaway copies so nothing in the repo can be left changed,
+# even if the script is interrupted.
+if [ -n "$DRY" ]; then
+  T=$(mktemp -d); trap 'rm -rf "$T"' EXIT
+  sed '/<!-- DRAFT:/d; /<base href="\.\.\/">/d' "$SRC" > "$T/$DST"
+  cp days.js "$T/days.js"
+  sed -i -E "s/(file: \"day-$NN.html\", live: )false, ?/\1true, /" "$T/days.js"
+  echo "DRY RUN for day $NN (nothing in the repo is changed):"
+  grep -q '<base href' "$T/$DST" && echo "  ERROR: base tag still present" || echo "  page ok: draft lines removed"
+  grep -q "file: \"day-$NN.html\", live: true" "$T/days.js" && echo "  hub ok: day $NN would be marked live" || echo "  ERROR: live flag not set"
+  if [ -f "day-$PREV.html" ]; then
+    grep -q 'class="up-next locked" href="index.html#select"' "day-$PREV.html" && echo "  day $PREV ok: its Up next strip would link to day $NN" || echo "  note: day $PREV has no locked Up next strip"
+  else
+    echo "  note: day $PREV is not live yet, so its strip will be linked when it is"
+  fi
+  exit 0
+fi
+
 # 1. Page: drop the draft-only lines and move it to the root
 sed '/<!-- DRAFT:/d; /<base href="\.\.\/">/d' "$SRC" > "$DST"
 grep -q '<base href' "$DST" && { echo "ERROR: base tag still present"; exit 1; }
@@ -41,18 +59,9 @@ grep -q "file: \"day-$NN.html\", live: true" days.js || { echo "ERROR: could not
 # 3. Previous day: its "Up next" strip now links to this day
 if [ -f "day-$PREV.html" ]; then
   sed -i "s#class=\"up-next locked\" href=\"index.html\#select\"#class=\"up-next\" href=\"day-$NN.html\"#; s#Up next · Product $NN#Next · Product $NN#" "day-$PREV.html"
-fi
-
-if [ -n "$DRY" ]; then
-  echo "DRY RUN for day $NN. Changes that would be published:"
-  git --no-pager diff --stat
-  git --no-pager diff -- days.js "day-$PREV.html"
-  head -8 "$DST"
-  git checkout -- days.js "day-$PREV.html" 2>/dev/null || true
-  rm -f "$DST"
-  exit 0
+  git add "day-$PREV.html"
 fi
 
 git rm -q "$SRC"
-git add "$DST" days.js "day-$PREV.html"
+git add "$DST" days.js
 echo "Day $NN ready to commit."
