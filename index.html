@@ -10,75 +10,57 @@
 <meta property="og:image" content="https://cercit.github.io/GTAVI/assets/hub-cover.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700;800;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,700..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <script src="days.js"></script>
 </head>
 <body>
 
-<header class="topbar">
-  <a class="brand" href="index.html">
-    <img src="assets/rockstar-logo.png" alt="Rockstar Games">
-    <span class="wordmark">gta <em>vi</em> · 9 products</span>
-  </a>
-  <nav><a href="#days">All 9 days</a><a href="https://samsm.vercel.app">About me</a></nav>
+<header class="nav">
+  <a class="brand" href="index.html"><img src="assets/rockstar-logo.png" alt="Rockstar Games"><span>9 Products</span></a>
+  <nav class="links"><a href="#select">All days</a><a href="https://samsm.vercel.app">About me</a></nav>
 </header>
 
-<div class="cover">
-  <img src="assets/hub-cover.jpg" alt="Grand Theft Auto VI official cover art">
-</div>
+<div class="cover-full"><img src="assets/hub-cover.jpg" alt="Grand Theft Auto VI official cover art"></div>
 
-<section class="intro">
-  <div class="wrap">
-    <p class="kicker">Countdown to 19 November 2026</p>
-    <h1>9 rockstar <em>products</em></h1>
-    <p class="lede">GTA VI took 13 years, and a whole set of products kept Rockstar running in that time. Every day until launch, I break one down the way a product manager would: who it's for, what problem it solves, how it makes money, and what I'd change.</p>
-    <div class="countdown" id="countdown" aria-live="polite">
-      <div><b id="cd-d">-</b><span>days</span></div>
-      <div><b id="cd-h">-</b><span>hours</span></div>
-      <div><b id="cd-m">-</b><span>minutes</span></div>
-    </div>
-    <ul class="topics">
-      <li>GTA V</li><li>GTA Online</li><li class="hot">RAGE engine</li><li>Social Club</li>
-      <li>Rockstar Games Launcher</li><li>Shark Cards</li><li>GTA+</li><li>FiveM</li><li>GTA VI</li>
-    </ul>
+<section class="wrap hub-intro">
+  <p class="label">A product breakdown · 11–19 November 2026</p>
+  <h1 class="display">9 Rockstar <span class="grad">products</span></h1>
+  <p class="lede">GTA VI took 13 years. These are the products that kept Rockstar running in that time, broken down one a day, the way a product manager would.</p>
+  <div class="countdown" aria-live="polite">
+    <div><b id="cd-d">–</b><span>Days</span></div>
+    <div><b id="cd-h">–</b><span>Hours</span></div>
+    <div><b id="cd-m">–</b><span>Minutes</span></div>
   </div>
 </section>
 
-<main class="wrap">
-  <div class="grid" id="days"></div>
+<main class="wrap select" id="select">
+  <div class="select-head">
+    <h2 class="display">Select a product</h2>
+    <span class="label" id="progress"></span>
+  </div>
+  <div class="rows" id="rows"></div>
 </main>
 
 <footer>
-  Independent product breakdown by Sameer Mittimani.
-  <span class="credit">Artwork and logos © Rockstar Games / Take-Two Interactive, from the official GTA VI wallpaper pack.</span>
+  <b>Independent product breakdown by Sameer Mittimani.</b><br>
+  Artwork and logos © Rockstar Games / Take-Two Interactive, from the official GTA VI wallpaper pack.
 </footer>
 
 <script>
-  const grid = document.getElementById("days");
-  grid.innerHTML = DAYS.map(d => {
-    const art = d.art || "hub-cover.jpg";
-    return `
-    <a class="day ${d.live ? "" : "locked"}" href="${d.live ? d.file : "#"}" ${d.live ? "" : 'aria-disabled="true" tabindex="-1"'}>
-      <div class="thumb" style="background-image:url('assets/${art}')"></div>
-      <span class="tag ${d.live ? "live" : "soon"}">${d.live ? "Live" : d.date}</span>
-      <div class="body">
-        <div class="num">${String(d.n).padStart(2, "0")}</div>
-        <div class="date">${d.date}</div>
-        <h3>${d.title}</h3>
-        <p>${d.live ? d.hook : "Goes live on " + d.date + "."}</p>
-      </div>
-    </a>`;
-  }).join("");
+  document.getElementById("rows").innerHTML = DAYS.map(d => `
+    <a class="row ${d.live ? "live" : "locked"}" href="${d.live ? d.file : "#"}" ${d.live ? "" : 'aria-disabled="true" tabindex="-1"'}>
+      <span class="n">${pad(d.n)}</span>
+      <span class="art" style="background-image:url('assets/t-d${pad(d.n)}.jpg')"></span>
+      <span><span class="t">${d.title}</span><span class="h">${d.hook}</span></span>
+      <span class="s">${d.live ? "Play ›" : "Locked · " + d.date}</span>
+    </a>`).join("");
+  document.getElementById("progress").textContent = DAYS.filter(d => d.live).length + " / 9 unlocked";
 
-  // Countdown to launch day (midnight, viewer's local time)
   const launch = new Date(2026, 10, 19, 0, 0, 0);
   function tick() {
     const ms = launch - new Date();
-    if (ms <= 0) {
-      document.getElementById("countdown").innerHTML = "<div><b>Out now</b><span>19 Nov 2026</span></div>";
-      return;
-    }
+    if (ms <= 0) { document.querySelector(".countdown").innerHTML = "<div><b>Out now</b><span>19 Nov 2026</span></div>"; return; }
     const m = Math.floor(ms / 60000);
     document.getElementById("cd-d").textContent = Math.floor(m / 1440);
     document.getElementById("cd-h").textContent = Math.floor((m % 1440) / 60);

@@ -9,126 +9,139 @@
 <meta property="og:image" content="https://cercit.github.io/GTAVI/assets/day01-hero.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700;800;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,700..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <script src="days.js"></script>
 </head>
 <body>
 
-<header class="topbar">
-  <a class="brand" href="index.html">
-    <img src="assets/rockstar-logo.png" alt="Rockstar Games">
-    <span class="wordmark">gta <em>vi</em> · 9 products</span>
-  </a>
-  <nav><a href="index.html">All 9 days</a><a href="https://samsm.vercel.app">About me</a></nav>
+<header class="nav">
+  <a class="brand" href="index.html"><img src="assets/rockstar-logo.png" alt="Rockstar Games"><span>9 Products</span></a>
+  <nav class="links"><a href="index.html#select">All days</a><a href="https://samsm.vercel.app">About me</a></nav>
 </header>
 
-<section class="hero-art" id="hero" style="background-image:url('assets/day01-hero.jpg')">
+<section class="hero" id="hero" style="background-image:url('assets/day01-hero.jpg')">
   <div class="wrap">
-    <p class="kicker">Product 1 of 9 · 11 November</p>
-    <h1><em>gta v</em></h1>
-    <p class="lede">The game that kept earning for 13 years. It came out in September 2013, and it sold another five million copies in the last quarter alone, right before its own sequel.</p>
+    <div class="meta"><span class="label">Product 01 / 09</span><span class="label">11 November</span></div>
+    <h1 class="display">GTA V</h1>
+    <p class="lede">The game that kept earning for 13 years. It came out in September 2013, and sold another five million copies in the last quarter alone, right before its own sequel.</p>
   </div>
+  <span class="label scroll-cue">Scroll</span>
 </section>
 
-<main class="wrap">
-<article>
+<main>
+<div class="wrap">
+  <dl class="dossier">
+    <div><dt class="label">Type</dt><dd>Open-world game with a live online world inside</dd></div>
+    <div><dt class="label">Launched</dt><dd>17 Sep 2013, PS3 and Xbox 360</dd></div>
+    <div><dt class="label">Sold on</dt><dd>Three console generations, plus PC</dd></div>
+    <div><dt class="label">Copies sold</dt><dd>Nearly 235 million (Nov 2026)</dd></div>
+    <div><dt class="label">Makes money by</dt><dd>Game sales, re-releases, online spending</dd></div>
+    <div><dt class="label">PM concept</dt><dd>The cash cow</dd></div>
+  </dl>
 
-  <div class="factcard">
-    <h3>Product card</h3>
-    <dl>
-      <dt>Type</dt><dd>Open-world game, sold once, with a live online world inside it</dd>
-      <dt>Launched</dt><dd>17 September 2013, PS3 and Xbox 360</dd>
-      <dt>Sold on</dt><dd>Three console generations, plus PC</dd>
-      <dt>Copies sold</dt><dd>Nearly 235 million (Take-Two, November 2026)</dd>
-      <dt>Makes money by</dt><dd>Game sales, re-releases, and spending inside GTA Online</dd>
-      <dt>PM concept</dt><dd>Product life cycle: the cash cow</dd>
-    </dl>
-  </div>
+  <section class="chapter col">
+    <div class="chapter-head"><span class="num">01</span><h2 class="display">Who it's for</h2></div>
+    <p>A crime story set in Los Santos, a fake Los Angeles, where you switch between three criminals. Inside the same box sits GTA Online, a shared world where you build your own character and play with others.</p>
+    <p>That one product serves very different people. Story players who finish the campaign and move on. Online regulars who grind heists and collect cars for years. Role-players who treat the map as a second life. And upgraders who bought it on PS3, then again on PS4, then again on PS5.</p>
+  </section>
 
-  <h2><span class="n">01</span>what it is, who it's for</h2>
-  <p>A crime story set in Los Santos, a fake Los Angeles, where you switch between three criminals. Inside the same box sits GTA Online, a shared world where you build your own character and play with others.</p>
-  <p>That one product serves very different people. Story players who finish the campaign and move on. Online regulars who grind heists and collect cars for years. Role-players who treat the map as a place to live a second life. And upgraders who bought it on PS3, then again on PS4, then again on PS5.</p>
+  <section class="chapter col">
+    <div class="chapter-head"><span class="num">02</span><h2 class="display">The problem it solved</h2></div>
+    <p><strong>For players:</strong> one game that was a driving game, a shooter, a heist movie and a hangout spot at once. New content came free, so friends were never split by who had paid for which pack.</p>
+    <p><strong>For Rockstar:</strong> the big-game problem. You spend years and a fortune on one release, sales spike for a few months, then fall away. GTA V broke that cycle. It kept selling, and the online side kept people spending long after launch.</p>
+  </section>
+</div>
 
-  <h2><span class="n">02</span>the problem it solved</h2>
-  <p><strong>For players:</strong> one game that was a driving game, a shooter, a heist movie and a hangout spot at once. When new content came, it came free, so friends were never split by who had paid for which pack.</p>
-  <p><strong>For Rockstar:</strong> the big-game problem. You spend years and a fortune on one release, sales spike for a few months, then fall away. GTA V broke that cycle. It kept selling, and the online side kept people spending long after launch.</p>
+<section class="band" style="background-image:url('assets/band-money.jpg')">
+  <div class="wrap"><p class="quote">Most products peak at launch. GTA V sold five million copies in the quarter before its own sequel.</p></div>
+</section>
 
-  <h2><span class="n">03</span>how it makes money</h2>
-  <p>Three ways, stacked on top of each other:</p>
-  <ul class="timeline">
-    <li><span class="when">The box</span>Sold once, then sold again on every new console. Same game, new buyers each generation.</li>
-    <li><span class="when">Online spending</span>Shark Cards (in-game money for real money) and later the GTA+ subscription.</li>
-    <li><span class="when">Staying power</span>Every year it stays popular, Rockstar keeps players' accounts, attention and habits ready for the next game.</li>
-  </ul>
+<div class="wrap">
+  <section class="chapter">
+    <div class="chapter-head"><span class="num">03</span><h2 class="display">How it makes money</h2></div>
+    <ul class="ways">
+      <li><span class="k">The box</span><span class="v">Sold once, then sold again on every new console. Same game, new buyers each generation.</span></li>
+      <li><span class="k">Online spending</span><span class="v">Shark Cards, which swap real money for in-game money, and later the GTA+ subscription.</span></li>
+      <li><span class="k">Staying power</span><span class="v">Every year it stays popular, Rockstar keeps players' accounts, attention and habits ready for the next game.</span></li>
+    </ul>
+  </section>
 
-  <h2><span class="n">04</span>the numbers</h2>
-  <div class="stats">
-    <div class="stat"><b>$1B</b><span>in sales in the first 3 days, Sept 2013</span></div>
-    <div class="stat"><b>~235M</b><span>copies sold by Nov 2026</span></div>
-    <div class="stat"><b>+5M</b><span>copies in the latest quarter alone</span></div>
-  </div>
-  <ul class="timeline">
-    <li class="big"><span class="when">17 Sep 2013</span>Launch on PS3 and Xbox 360. Over $800 million in a day</li>
-    <li><span class="when">1 Oct 2013</span>GTA Online goes live, free with the game</li>
-    <li><span class="when">Nov 2014 · Apr 2015</span>PS4 and Xbox One, then PC</li>
-    <li><span class="when">Oct 2018</span>Red Dead Redemption 2 ships in the gap. It's now past 89 million copies</li>
-    <li><span class="when">Mar 2022</span>PS5 and Xbox Series X|S versions</li>
-    <li><span class="when">May 2024</span>Over 200 million copies</li>
-    <li class="big"><span class="when">Nov 2026</span>Nearly 235 million, ten days before GTA VI</li>
-  </ul>
+  <section class="chapter">
+    <div class="chapter-head"><span class="num">04</span><h2 class="display">The numbers</h2></div>
+    <div class="stats">
+      <div class="stat"><b class="grad">$1B</b><span>in sales in the first three days, September 2013</span></div>
+      <div class="stat"><b class="grad">~235M</b><span>copies sold by November 2026</span></div>
+      <div class="stat"><b class="grad">+5M</b><span>copies in the latest quarter alone</span></div>
+    </div>
+    <ul class="ledger">
+      <li class="big"><span class="when">17 Sep 2013</span><span>Launch on PS3 and Xbox 360. Over $800 million in a day</span></li>
+      <li><span class="when">1 Oct 2013</span><span>GTA Online goes live, free with the game</span></li>
+      <li><span class="when">Nov 2014 · Apr 2015</span><span>PS4 and Xbox One, then PC</span></li>
+      <li><span class="when">Oct 2018</span><span>Red Dead Redemption 2 ships in the gap. Now past 89 million copies</span></li>
+      <li><span class="when">Mar 2022</span><span>PS5 and Xbox Series X|S versions</span></li>
+      <li><span class="when">May 2024</span><span>Over 200 million copies</span></li>
+      <li class="big"><span class="when">Nov 2026</span><span>Nearly 235 million, ten days before GTA VI</span></li>
+    </ul>
+  </section>
+</div>
 
-  <div class="pull">Most products peak at launch. GTA V sold five million copies in the quarter before its own sequel came out.</div>
+<section class="band" style="background-image:url('assets/band-change.jpg')">
+  <div class="wrap"><p class="quote">The story players got nothing new for 13 years.</p></div>
+</section>
 
-  <h2><span class="n">05</span>what i'd change</h2>
-  <p>In 2013 Rockstar said story add-ons for GTA V were coming. They never came. Every new thing after that went into GTA Online, because that's where the money was. Commercially it was the right call, and the numbers prove it. But a big group of players bought GTA V for the story, and for 13 years the product quietly stopped being built for them.</p>
-  <p>As a PM, I'd have kept one small team on the story side. Not for revenue, but because those players are exactly who buys GTA VI on day one, and GTA VI is single-player at launch.</p>
+<div class="wrap">
+  <section class="chapter col">
+    <div class="chapter-head"><span class="num">05</span><h2 class="display">What I'd change</h2></div>
+    <p>In 2013 Rockstar said story add-ons for GTA V were coming. They never came. Every new thing after that went into GTA Online, because that's where the money was. Commercially it was the right call, and the numbers prove it. But a big group of players bought GTA V for the story, and for 13 years the product quietly stopped being built for them.</p>
+    <p>As a PM, I'd have kept one small team on the story side. Not for revenue, but because those players are exactly who buys GTA VI on day one, and GTA VI is single-player at launch.</p>
+  </section>
 
-  <div class="lesson">
-    <p class="label">PM concept: the cash cow</p>
-    <p>In the BCG matrix, a cash cow is a product that earns far more than it costs to keep alive, and pays for the company's next bets. GTA V is about the cleanest example you'll find. It paid for Red Dead Redemption 2 and for 13 years of GTA VI.</p>
+  <section class="concept">
+    <span class="label">PM concept · Learn this</span>
+    <h3>The cash cow</h3>
+    <div class="col">
+      <p>In the BCG matrix, a cash cow is a product that earns far more than it costs to keep alive, and pays for the company's next bets. GTA V is about the cleanest example you'll find. It paid for Red Dead Redemption 2 and for 13 years of GTA VI.</p>
+    </div>
 
     <div class="bcg" role="img" aria-label="BCG matrix with Rockstar products. Stars: GTA VI. Question marks: FiveM. Cash cows: GTA V and GTA Online. Dogs: Red Dead Online.">
-      <div class="ylab"><span>Low</span><span>Market growth</span><span>High</span></div>
-      <div class="quad">
-        <div class="q star"><h4>stars</h4><p class="what">Growing fast, leading. Needs heavy spending.</p><span class="chip">GTA VI</span></div>
-        <div class="q qmark"><h4>question marks</h4><p class="what">Growing market, unproven share. Bet or drop?</p><span class="chip">FiveM</span></div>
-        <div class="q cow"><h4>cash cows</h4><p class="what">Mature market, leading share. Earns more than it costs.</p><span class="chip">GTA V</span><span class="chip">GTA Online</span></div>
-        <div class="q dog"><h4>dogs</h4><p class="what">Low growth, low share. Kept alive or wound down.</p><span class="chip">Red Dead Online</span></div>
+      <div class="axis-y"><span>Low</span><b>Market growth</b><span>High</span></div>
+      <div class="grid">
+        <div class="q"><h4>Star</h4><p>Growing fast, leading. Needs heavy spending.</p><span class="who">GTA VI</span></div>
+        <div class="q"><h4>Question mark</h4><p>Growing market, unproven. Bet on it or drop it?</p><span class="who">FiveM</span></div>
+        <div class="q cow"><h4>Cash cow</h4><p>Mature market, leading share. Funds everything else.</p><span class="who">GTA V · GTA Online</span></div>
+        <div class="q dim"><h4>Dog</h4><p>Low growth, low share. Kept alive or wound down.</p><span class="who">Red Dead Online</span></div>
       </div>
-      <div></div>
-      <div class="xlab"><span>High</span><span>Market share</span><span>Low</span></div>
-      <div></div>
-      <div class="flow">Cash from the cow (bottom left) funds the star (top left)</div>
+      <div class="axis-x"><span>High</span><b>Market share</b><span>Low</span></div>
     </div>
-    <p class="bcg-note">My placement, not Rockstar's. Red Dead Online is here because Rockstar said in 2022 it was moving its team away from big updates for it.</p>
-    <p>The hard question for any PM: when do you stop milking the cow and start feeding the next one? Rockstar's answer seems to be: never fully. GTA Online stays supported even after GTA VI launches.</p>
-  </div>
+    <p class="bcg-note">My placement, not Rockstar's. Red Dead Online sits in Dog because Rockstar said in 2022 it was moving its team away from big updates for it.</p>
 
-  <a class="next" href="index.html">
-    <div class="thumb" style="background-image:url('assets/hub-cover.jpg')"></div>
-    <div><small>Tomorrow · Product 2 · 12 November</small>
-    <strong>GTA Online: the free mode that turned a game into a business.</strong></div>
-  </a>
+    <div class="col" style="margin-top:24px">
+      <p>The hard question for any PM: when do you stop milking the cow and start feeding the next one? Rockstar's answer seems to be: never fully. GTA Online stays supported even after GTA VI launches.</p>
+    </div>
+  </section>
 
-  <div class="sources">
-    Facts from Take-Two Interactive results and filings, and Rockstar announcements, cross-checked on 11 November 2026.
+  <p class="sources">Facts from Take-Two Interactive results and filings and Rockstar announcements, cross-checked 11 November 2026:
     <a href="https://simulationdaily.com/news/take-two-q2-fy2027-gta5-gta6-pre-orders/">Take-Two Q2 FY2027 coverage</a> ·
     <a href="https://gamesbeat.com/?p=338567">GamesBeat</a> ·
-    <a href="https://variety.com/2026/gaming/news/gta-6-release-details-1236846230/">Variety, GTA VI release details</a>.
-  </div>
+    <a href="https://variety.com/2026/gaming/news/gta-6-release-details-1236846230/">Variety</a></p>
+</div>
 
-</article>
+<a class="up-next locked" href="index.html#select" style="background-image:url('assets/d02.jpg')">
+  <div class="wrap">
+    <span class="label">Up next · Product 02 · 12 November</span>
+    <h2 class="display">GTA Online</h2>
+    <p>The free mode that turned a game into a business.</p>
+  </div>
+</a>
 </main>
 
 <footer>
-  Independent product breakdown by Sameer Mittimani.
-  <span class="credit">Artwork and logos © Rockstar Games / Take-Two Interactive, from the official GTA VI wallpaper pack.</span>
+  <b>Independent product breakdown by Sameer Mittimani.</b><br>
+  Artwork and logos © Rockstar Games / Take-Two Interactive, from the official GTA VI wallpaper pack.
 </footer>
 <script>
-  // Portrait artwork on phones, landscape elsewhere
-  const hero = document.getElementById("hero");
-  if (matchMedia("(max-width: 560px)").matches) hero.style.backgroundImage = "url('assets/day01-hero-phone.jpg')";
+  if (matchMedia("(max-width: 720px)").matches) document.getElementById("hero").style.backgroundImage = "url('assets/day01-hero-phone.jpg')";
 </script>
 </body>
 </html>
