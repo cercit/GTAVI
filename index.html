@@ -1,72 +1,204 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-page="hub">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GTA VI: 9 Rockstar products</title>
-<meta name="description" content="9 Rockstar products broken down from a product manager's view, one a day until GTA VI launches on 19 November 2026.">
-<meta property="og:title" content="GTA VI: 9 Rockstar products">
-<meta property="og:description" content="One Rockstar product a day, broken down, until launch on 19 November.">
-<meta property="og:image" content="https://cercit.github.io/GTAVI/assets/hub-cover.jpg">
+<title>9 Rockstar products: a product manager's breakdown before GTA VI</title>
+<meta name="description" content="Nine Rockstar products broken down from a product manager's view, one a day until GTA VI launches on 19 November 2026. An independent portfolio project by Sameer Mittimani.">
+<meta name="author" content="Sameer Mittimani">
+<meta name="theme-color" content="#09090b">
+<link rel="canonical" href="https://cercit.github.io/GTAVI/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="9 Rockstar products, by Sameer Mittimani">
+<meta property="og:url" content="https://cercit.github.io/GTAVI/">
+<meta property="og:title" content="9 Rockstar products, one PM breakdown a day until GTA VI">
+<meta property="og:description" content="GTA V, GTA Online, the RAGE engine, the Rockstar Games account, the Launcher, Shark Cards, GTA+, FiveM and GTA VI, each read the way a product manager would.">
+<meta property="og:image" content="https://cercit.github.io/GTAVI/assets/share-hub.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="9 Rockstar products: a product breakdown by Sameer Mittimani, 11 to 19 November 2026">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,700..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,700..900&family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@1,6..72,400..500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="hub.css">
 <script src="days.js"></script>
+<script src="hub.js" defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"9 Rockstar products","url":"https://cercit.github.io/GTAVI/","inLanguage":"en","description":"Nine Rockstar products broken down from a product manager's view, one a day until GTA VI launches on 19 November 2026.","author":{"@type":"Person","name":"Sameer Mittimani","url":"https://samsm.vercel.app/","sameAs":["https://github.com/cercit"]}}
+</script>
 </head>
-<body>
+<body class="hub">
+<a class="skip" href="#select">Skip to the nine products</a>
 
-<header class="nav">
-  <a class="brand" href="index.html"><img src="assets/rockstar-logo.png" alt="Rockstar Games"><span>9 Products</span></a>
-  <nav class="links"><a href="#select">All days</a><a href="https://samsm.vercel.app">About me</a></nav>
+<header class="nav" id="nav">
+  <a class="brand" href="index.html"><img src="assets/rockstar-logo.png" alt="Rockstar Games logo" width="30" height="27"><span>9 Products</span></a>
+  <nav class="links" aria-label="Sections">
+    <a href="#select">Products</a>
+    <a href="#ecosystem">Connections</a>
+    <a href="#concepts">PM concepts</a>
+    <a href="#about">About</a>
+  </nav>
+  <a class="site" href="https://samsm.vercel.app/">Sameer's portfolio <span aria-hidden="true">↗</span></a>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="sheet">Menu</button>
 </header>
 
-<div class="cover-full"><img src="assets/hub-cover.jpg" alt="Grand Theft Auto VI official cover art"></div>
+<div class="sheet" id="sheet" hidden>
+  <nav aria-label="Menu">
+    <a href="#select"><b>01</b>Products</a>
+    <a href="#ecosystem"><b>02</b>Connections</a>
+    <a href="#concepts"><b>03</b>PM concepts</a>
+    <a href="#about"><b>04</b>About</a>
+  </nav>
+  <p><a href="https://samsm.vercel.app/">Sameer's portfolio ↗</a><a href="https://github.com/cercit">GitHub ↗</a></p>
+</div>
 
-<section class="wrap hub-intro">
-  <p class="label">A product breakdown · 11–19 November 2026</p>
-  <h1 class="display">9 Rockstar <span class="grad">products</span></h1>
-  <p class="lede">GTA VI took 13 years. These are the products that kept Rockstar running in that time, broken down one a day, the way a product manager would.</p>
-  <div class="countdown" aria-live="polite">
-    <div><b id="cd-d">–</b><span>Days</span></div>
-    <div><b id="cd-h">–</b><span>Hours</span></div>
-    <div><b id="cd-m">–</b><span>Minutes</span></div>
+<main>
+<section class="hero" id="top">
+  <picture class="hero-art">
+    <source media="(max-width: 599px)" srcset="assets/h-rooftop-phone.jpg" width="900" height="2000">
+    <source media="(max-width: 899px)" srcset="assets/h-rooftop.jpg" width="2000" height="1125">
+    <img src="assets/h-rooftop-wide.jpg" width="2560" height="1080" fetchpriority="high" alt="Official Grand Theft Auto VI artwork: Jason and Lucia on a rooftop above Vice City at dusk">
+  </picture>
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    <p class="label kicker rise">A product breakdown · 11–19 November 2026</p>
+    <h1 class="display rise">Behind the world's most ambitious <span class="grad">gaming universe</span></h1>
+    <p class="stand rise">9 products. 9 product perspectives. One ecosystem that changed the gaming industry.</p>
+    <div class="hero-cta rise">
+      <a class="btn primary" id="cta-latest" href="#select">Select a product</a>
+      <a class="btn ghost" href="#ecosystem">See how they connect</a>
+    </div>
+    <p class="byline rise">An independent breakdown by <a href="#about">Sameer Mittimani</a>. Not a Rockstar site.</p>
+  </div>
+  <div class="wrap hero-foot rise">
+    <ol class="rail" id="rail" aria-label="Nine products in nine days"></ol>
+    <div class="countdown" role="timer" aria-label="Time until GTA VI launches on 19 November 2026">
+      <span class="label">GTA VI in</span>
+      <div><b class="cd-d">–</b><span>Days</span></div>
+      <div><b class="cd-h">–</b><span>Hours</span></div>
+      <div><b class="cd-m">–</b><span>Minutes</span></div>
+    </div>
   </div>
 </section>
 
-<main class="wrap select" id="select">
-  <div class="select-head">
-    <h2 class="display">Select a product</h2>
-    <span class="label" id="progress"></span>
+<section class="premise wrap" id="premise" aria-labelledby="premise-h">
+  <p class="label">Why this exists</p>
+  <h2 class="lede" id="premise-h" data-reveal>GTA VI took 13 years. These are the products that kept Rockstar running in that time, broken down one a day, the way a product manager would.</h2>
+  <div class="three" data-reveal>
+    <div><h3>What this is</h3><p>Nine breakdowns in nine days, 11 to 19 November 2026. A new one unlocks each day until GTA VI launches.</p></div>
+    <div><h3>Why Rockstar</h3><p>People see one game. Around it sit an engine, a player account, a PC launcher, an in-game currency, a subscription and a mod platform. Someone had to decide to build each of them, and decide what each one is for.</p></div>
+    <div><h3>How I check it</h3><p>Every number comes from a fact sheet checked before the page is written. My own opinions are kept apart and labelled as mine.</p></div>
   </div>
-  <div class="rows" id="rows"></div>
+
+  <div class="anatomy" aria-labelledby="anatomy-h" data-reveal>
+    <h3 class="label" id="anatomy-h">Every breakdown asks the same seven things</h3>
+    <ol>
+      <li><b>Product card</b><span>Type, launch, price, how it earns</span></li>
+      <li><b>Who it's for</b><span>The people who depend on it</span></li>
+      <li><b>The problem it solved</b><span>For players, and for Rockstar</span></li>
+      <li><b>How it makes money</b><span>Directly, or through something else</span></li>
+      <li><b>The numbers</b><span>With a dated timeline</span></li>
+      <li><b>What I'd change</b><span>My view as a PM</span></li>
+      <li><b>PM concept</b><span>One idea to learn</span></li>
+    </ol>
+  </div>
+
+  <figure class="pull" id="pull" hidden data-reveal>
+    <blockquote id="pull-q"></blockquote>
+    <figcaption><span id="pull-from"></span><span class="dots" id="pull-dots"></span></figcaption>
+  </figure>
+</section>
+
+<section class="select wrap" id="select" aria-labelledby="select-h">
+  <header class="sec-head" data-reveal>
+    <div><p class="label">The line-up</p><h2 class="display" id="select-h">Select a product</h2></div>
+    <span class="label" id="progress"></span>
+  </header>
+  <div class="picker" data-reveal>
+    <ol class="menu" id="menu"></ol>
+    <div class="stage" id="stage" aria-live="polite"></div>
+  </div>
+  <noscript><p class="note">The nine products: GTA V, GTA Online, RAGE engine, Rockstar Games account, Rockstar Games Launcher, Shark Cards, GTA+, FiveM and GTA VI. Start with <a href="day-01.html">GTA V</a>.</p></noscript>
+</section>
+
+<section class="eco" id="ecosystem" aria-labelledby="eco-h">
+  <div class="wrap">
+    <header class="sec-head" data-reveal>
+      <div><p class="label">The bigger picture</p><h2 class="display" id="eco-h">How the nine connect</h2></div>
+      <span class="label" id="eco-count"></span>
+    </header>
+    <p class="sec-intro">None of these products works alone. This map is drawn only from the breakdowns that are already live, so it grows by one product a day.</p>
+    <div class="eco-tools">
+      <div class="chips" id="eco-types" role="group" aria-label="Show connections by kind"></div>
+      <div class="chips basis" id="eco-basis" role="group" aria-label="Show connections by how sure they are"></div>
+    </div>
+    <div class="eco-grid" data-reveal>
+      <div class="board" id="board"></div>
+      <aside class="eco-panel" id="eco-panel" aria-live="polite"></aside>
+    </div>
+    <p class="note">The four layers are my own grouping, not Rockstar's. Every line comes from a published breakdown, and each one says whether it is a checked fact, my read, or still an open question.</p>
+  </div>
+</section>
+
+<section class="concepts wrap" id="concepts" aria-labelledby="concepts-h">
+  <header class="sec-head" data-reveal>
+    <div><p class="label">Learn this</p><h2 class="display" id="concepts-h">One PM concept per product</h2></div>
+    <span class="label" id="concepts-count"></span>
+  </header>
+  <p class="sec-intro">Each breakdown ends on one idea a product manager should know, and the question it raises. Open a question to see the concept and the short answer.</p>
+  <ol class="plays" id="plays" data-reveal></ol>
+</section>
+
+<section class="launch" aria-labelledby="launch-h">
+  <div class="wrap launch-in">
+    <div>
+      <p class="label">19 November 2026</p>
+      <h2 class="display" id="launch-h">Launch day is <span class="grad">product 09</span></h2>
+      <p>The last breakdown is GTA VI itself: launch day, and how the other eight come together.</p>
+      <div class="countdown big" role="timer" aria-label="Time until GTA VI launches on 19 November 2026">
+        <div><b class="cd-d">–</b><span>Days</span></div>
+        <div><b class="cd-h">–</b><span>Hours</span></div>
+        <div><b class="cd-m">–</b><span>Minutes</span></div>
+      </div>
+    </div>
+    <figure class="poster" data-reveal>
+      <img src="assets/hub-cover.jpg" width="1920" height="1080" loading="lazy" alt="Grand Theft Auto VI official cover art">
+      <figcaption>Official cover art © Rockstar Games</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="about wrap" id="about" aria-labelledby="about-h">
+  <div class="about-main" data-reveal>
+    <p class="label">Who made this</p>
+    <h2 class="display" id="about-h">Sameer Mittimani</h2>
+    <p class="tags">Lending · Product · Data · Applied AI</p>
+    <p>I'm a working professional learning product management through the IIT Roorkee x Masai Product Management programme. I learn a concept best when I use it on a real business.</p>
+    <p>So for nine days I'm taking Rockstar apart, one product at a time: who it's for, how it earns, and what I'd change if it were mine to run.</p>
+    <div class="about-links">
+      <a class="btn primary" href="https://samsm.vercel.app/">See my other work <span aria-hidden="true">↗</span></a>
+      <a class="btn ghost" href="https://github.com/cercit">GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+  <div class="method" data-reveal>
+    <h3>How the facts are checked</h3>
+    <ul>
+      <li><b>Sources first.</b> Take-Two results and filings, Rockstar announcements and press coverage.</li>
+      <li><b>Two or more must agree.</b> The first research pass is done with AI research tools. Nothing from them goes on a page until at least two sources agree and the big numbers match a web check.</li>
+      <li><b>No guessed numbers.</b> Where Take-Two doesn't publish a figure, the page says so and leaves it out.</li>
+      <li><b>Opinion is labelled.</b> "What I'd change" is my view. Diagrams marked as illustrations are not real data.</li>
+    </ul>
+    <p class="note">This is an independent project. It isn't made, sponsored or approved by Rockstar Games or Take-Two Interactive.</p>
+  </div>
+</section>
 </main>
 
 <footer>
-  <b>Independent product breakdown by Sameer Mittimani.</b><br>
-  Artwork and logos © Rockstar Games / Take-Two Interactive, from the official GTA VI wallpaper pack.
+  <p><b>Independent product breakdown by Sameer Mittimani.</b> Not an official Rockstar Games website.</p>
+  <p>Artwork and logos © Rockstar Games / Take-Two Interactive, from the official GTA VI wallpaper pack.</p>
+  <p class="foot-links"><a href="#top">Back to top</a><a href="https://samsm.vercel.app/">samsm.vercel.app</a><a href="https://github.com/cercit">github.com/cercit</a></p>
 </footer>
-
-<script>
-  document.getElementById("rows").innerHTML = DAYS.map(d => `
-    <a class="row ${d.live ? "live" : "locked"}" href="${d.live ? d.file : "#"}" ${d.live ? "" : 'aria-disabled="true" tabindex="-1"'}>
-      <span class="n">${pad(d.n)}</span>
-      <span class="art" style="background-image:url('assets/t-d${pad(d.n)}.jpg')"></span>
-      <span><span class="t">${d.title}</span><span class="h">${d.hook}</span></span>
-      <span class="s">${d.live ? "Play ›" : "Locked · " + d.date}</span>
-    </a>`).join("");
-  document.getElementById("progress").textContent = DAYS.filter(d => d.live).length + " / 9 unlocked";
-
-  const launch = new Date(2026, 10, 19, 0, 0, 0);
-  function tick() {
-    const ms = launch - new Date();
-    if (ms <= 0) { document.querySelector(".countdown").innerHTML = "<div><b>Out now</b><span>19 Nov 2026</span></div>"; return; }
-    const m = Math.floor(ms / 60000);
-    document.getElementById("cd-d").textContent = Math.floor(m / 1440);
-    document.getElementById("cd-h").textContent = Math.floor((m % 1440) / 60);
-    document.getElementById("cd-m").textContent = m % 60;
-  }
-  tick(); setInterval(tick, 30000);
-</script>
 </body>
 </html>
