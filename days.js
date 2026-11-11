@@ -31,3 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const set = () => nav.classList.toggle("solid", scrollY > 80);
   set(); addEventListener("scroll", set, { passive: true });
 });
+
+// Shared tools for the day pages (reading progress, share links, fact / view labels) live in
+// shell.css and shell.js. They are loaded from here, so every day page gets them with no extra tags.
+// The hub (index.html) has its own and skips this.
+(function () {
+  if (document.documentElement.dataset.page === "hub" || document.querySelector('link[href$="shell.css"]')) return;
+  const css = document.createElement("link"); css.rel = "stylesheet"; css.href = "shell.css"; css.setAttribute("blocking", "render");
+  const js = document.createElement("script"); js.src = "shell.js"; js.async = false;
+  document.head.append(css, js);
+})();

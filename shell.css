@@ -1,0 +1,29 @@
+/* Shared tools for the day pages: reading progress, "checked facts" and "my view" labels, share links.
+   Everything here uses the page's own colour variables, so it follows each day's theme.
+   Loaded by days.js. Nothing in a page needs to change for it to work. */
+@media (prefers-reduced-motion: no-preference) { @view-transition { navigation: auto; } }
+
+/* Reading progress along the top edge */
+.read-bar { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 30; pointer-events: none; }
+.read-bar i { display: block; height: 100%; background: var(--pink); transform: scaleX(0); transform-origin: 0 50%; }
+
+/* What kind of section this is */
+.chapter-head .kind { align-self: center; margin-left: auto; padding: 5px 9px; border: 1px solid currentColor; border-radius: 3px; font: 700 10.5px/1 var(--body); letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; color: var(--muted); }
+.chapter-head .kind.view { color: var(--pink); }
+.theme-engine .chapter-head .kind { align-self: flex-start; margin-left: 0; font-family: var(--mono); }
+.theme-account .chapter-head .kind.view, .theme-online .chapter-head .kind.view { color: var(--y-ink); }
+
+/* Share and onward links, after the sources line */
+.share { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--line); }
+.share .label { display: block; margin-bottom: 12px; }
+.share-btns { display: flex; flex-wrap: wrap; gap: 8px; }
+.share-btns a, .share-btns button { display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border: 1px solid var(--muted); border-radius: 3px; background: transparent; color: var(--text); font: 600 13px/1 var(--body); letter-spacing: .03em; text-decoration: none; cursor: pointer; transition: border-color .2s, background-color .2s; }
+.share-btns a:hover, .share-btns button:hover { border-color: var(--text); }
+.share-btns a:focus-visible, .share-btns button:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+.share-btns .done { border-color: var(--text); }
+
+@media (max-width: 720px) {
+  .chapter-head { flex-wrap: wrap; }
+  .chapter-head .kind { margin-left: 0; }
+  .share { grid-template-columns: 1fr; gap: 24px; }
+}

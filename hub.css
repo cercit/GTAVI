@@ -353,9 +353,9 @@ footer b { color: var(--muted); font-weight: 600; }
   .item.live .s { font-size: 12px; }
   .eco { margin-top: 92px; padding: 84px 0 72px; }
   .band { grid-template-columns: 1fr; min-height: 0; }
-  .band-name { padding: 14px 14px 0; border-right: 0; }
-  .band-name span { display: inline; margin: 0; }
-  .band-name b { display: inline; margin-right: 8px; font-size: 18px; }
+  .band-name { position: relative; z-index: 2; padding: 12px 12px 0; border-right: 0; }
+  .band-name span { display: inline; margin: 0; background: var(--bg); box-shadow: 0 0 0 4px var(--bg); }
+  .band-name b { display: inline; margin-right: 10px; font-size: 18px; background: var(--bg); box-shadow: 0 0 0 4px var(--bg); }
   .band-nodes { padding: 30px 10px 34px; gap: 8px; }
   .node { grid-template-columns: 1fr; gap: 0; padding: 9px 10px; font-size: 13px; max-width: 31%; border-radius: 10px; }
   .node .art { display: none; }
@@ -371,6 +371,7 @@ footer b { color: var(--muted); font-weight: 600; }
   .launch-in { grid-template-columns: 1fr; gap: 44px; }
   .countdown.big { gap: 0 28px; }
   .about { grid-template-columns: 1fr; gap: 48px; padding-top: 92px; padding-bottom: 80px; }
+  .about .tags { font-size: 11.5px; letter-spacing: .13em; white-space: nowrap; }
   .method { padding: 22px; }
 }
 @media (max-width: 599px) {
