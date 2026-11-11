@@ -6,7 +6,7 @@
   --soft: #ddd3e8;
   --text: #f5f0fa;
   --muted: #a99bb8;
-  --dim: #6d6079;
+  --dim: #9284a0;
   --line: rgba(255, 255, 255, 0.12);
   --pink: #ff4f9f;
   --orange: #ffa24c;
@@ -155,7 +155,7 @@ body::after {
 .up-next.locked { filter: saturate(.6); }
 
 /* Sources + footer */
-.sources { font-size: 13px; color: var(--dim); margin-top: 48px; }
+.sources { font-size: 13px; color: var(--muted); margin-top: 48px; }
 .sources a { color: var(--muted); }
 footer { padding: 48px 24px 56px; text-align: center; font-size: 12px; color: var(--dim); letter-spacing: .04em; }
 footer b { color: var(--muted); font-weight: 600; }
@@ -261,7 +261,7 @@ footer b { color: var(--muted); font-weight: 600; }
    Yellow is used as a fill with black text on it; text on cream uses dark amber. */
 body.theme-online {
   --bg: #efe7da; --bg-2: #e3d9c9; --bg-rgb: 239,231,218;
-  --text: #121212; --soft: #2b2723; --muted: #6c6358; --dim: #998f81;
+  --text: #121212; --soft: #2b2723; --muted: #5f564b; --dim: #6f665a;
   --line: rgba(18,18,18,.16);
   --y: #fcaf17; --y-ink: #8a5a00;
   --pink: var(--y-ink); --orange: var(--y-ink); --teal: #121212;
@@ -339,3 +339,27 @@ body.theme-online {
   .theme-online .dossier { padding: 4px 16px 8px; }
   .theme-online .band-right .wrap p { text-align: left; }
 }
+
+/* =========================================================
+   Readability: text that sits on top of artwork
+   ========================================================= */
+/* Small hero labels get a backing chip so they read over any art */
+.hero .meta .label, .hub-intro .label {
+  background: rgba(var(--bg-rgb), .82); color: var(--text); padding: 4px 9px; border-radius: 3px;
+}
+/* Dark theme: soft shadow behind big white lines on art */
+.hero .display, .hero .lede, .band .quote, .up-next .display, .up-next p {
+  text-shadow: 0 2px 22px rgba(0,0,0,.55), 0 1px 3px rgba(0,0,0,.45);
+}
+.hero .lede { font-weight: 500; }
+/* Light theme: no shadows (text is dark, or already on black boxes) */
+.theme-online .hero .display, .theme-online .hero .lede, .theme-online .band .quote { text-shadow: none; }
+/* Light theme hero: a stronger cream fade behind the lede */
+.theme-online .hero::before {
+  background:
+    linear-gradient(0deg, var(--bg) 0%, rgba(var(--bg-rgb),.94) 30%, rgba(var(--bg-rgb),.55) 48%, rgba(var(--bg-rgb),0) 64%),
+    linear-gradient(90deg, rgba(var(--bg-rgb),.7) 0%, rgba(var(--bg-rgb),0) 50%);
+}
+/* Up-next strip: labels always light on its dark fade */
+.up-next .label { color: #fff; }
+.theme-online .up-next .label { color: #fcaf17; background: transparent; }
