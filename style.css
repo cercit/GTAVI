@@ -132,6 +132,26 @@ article p { margin: 0 0 16px; }
 .factcard dl > :nth-last-child(-n+2) { border-bottom: 0; }
 @media (max-width: 560px) { .factcard dl { grid-template-columns: 1fr; } .factcard dt { border-bottom: 0; padding-bottom: 0; font-size: 13px; } }
 
+/* BCG matrix */
+.bcg { margin: 18px 0 6px; display: grid; grid-template-columns: 26px 1fr; grid-template-rows: 1fr 22px; gap: 6px; }
+.bcg .ylab, .bcg .xlab { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; justify-content: space-between; }
+.bcg .ylab { writing-mode: vertical-rl; transform: rotate(180deg); }
+.bcg .xlab { grid-column: 2; }
+.bcg .quad { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; position: relative; }
+.bcg .q { border-radius: 12px; padding: 12px; min-height: 118px; background: rgba(29, 0, 46, .55); border: 1px solid var(--line); }
+.bcg .q h4 { margin: 0 0 2px; font-family: var(--head); font-weight: 800; font-size: 16px; text-transform: lowercase; }
+.bcg .q .what { font-size: 12px; color: var(--muted); line-height: 1.4; margin: 0 0 8px; }
+.bcg .chip { display: inline-block; font-size: 12px; font-weight: 700; padding: 4px 9px; border-radius: 99px; margin: 2px 4px 2px 0; background: rgba(255,255,255,.1); }
+.bcg .q.star h4 { color: var(--sun); }
+.bcg .q.qmark h4 { color: var(--lilac); }
+.bcg .q.cow { border-color: var(--teal); background: rgba(94, 231, 216, .12); }
+.bcg .q.cow h4 { color: var(--teal); }
+.bcg .q.cow .chip { background: var(--teal); color: var(--night); }
+.bcg .q.dog h4 { color: var(--muted); }
+.bcg .flow { grid-column: 2; font-size: 13px; color: var(--teal); text-align: center; margin-top: 2px; }
+.bcg-note { font-size: 12px; color: var(--muted); margin: 6px 0 14px; }
+@media (max-width: 560px) { .bcg .q { min-height: 0; padding: 10px; } .bcg .q h4 { font-size: 15px; } }
+
 .timeline { list-style: none; margin: 20px 0; padding: 0 0 0 22px; border-left: 2px solid var(--pink); }
 .timeline li { position: relative; margin: 0 0 18px; }
 .timeline li::before {
