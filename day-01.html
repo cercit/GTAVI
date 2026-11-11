@@ -7,7 +7,7 @@
 <meta name="description" content="Why Rockstar could afford 13 years between GTA V and GTA VI. Day 1 of a 9-day product breakdown.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700;800;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <script src="days.js"></script>
 </head>
@@ -15,22 +15,23 @@
 
 <header class="topbar">
   <a class="brand" href="index.html">
-    <img src="assets/rockstar-logo.png" alt="Rockstar Games" onerror="logoFallback(this)">
-    <span class="wordmark" style="display:none">GTA VI</span>
+    <img src="assets/rockstar-logo.png" alt="Rockstar Games">
+    <span class="wordmark">gta <em>vi</em> · 9 decisions</span>
   </a>
   <nav><a href="index.html">All 9 days</a><a href="https://samsm.vercel.app">About me</a></nav>
 </header>
 
-<section class="hero">
+<section class="hero-art" id="hero" style="background-image:url('assets/day01-hero.jpg')">
   <div class="wrap">
     <p class="kicker">Day 1 of 9 · 11 November</p>
-    <h1>The 13-year wait</h1>
+    <h1>the <em>13-year</em> wait</h1>
     <p class="lede">GTA V came out in September 2013. GTA VI comes out on 19 November 2026. In most companies, the person who proposed that gap wouldn't survive the first review meeting.</p>
   </div>
 </section>
 
 <main class="wrap">
 <article>
+
 
   <div class="stats">
     <div class="stat"><b>13 yrs</b><span>between GTA V and GTA VI</span></div>
@@ -71,8 +72,9 @@
   <p>This only works if you have a GTA V. Most products don't sell for a decade, and a team that copies "take your time" without that cushion just runs out of money. The wait also wasn't calm. GTA VI itself was delayed twice, and Take-Two's share price moved both times. That's Day 5.</p>
 
   <a class="next" href="index.html">
-    <small>Tomorrow · Day 2 · 12 November</small>
-    <strong>If GTA V kept paying for 13 years, what exactly was paying? GTA Online.</strong>
+    <div class="thumb" style="background-image:url('assets/hub-cover.jpg')"></div>
+    <div><small>Tomorrow · Day 2 · 12 November</small>
+    <strong>If GTA V kept paying for 13 years, what exactly was paying? GTA Online.</strong></div>
   </a>
 
   <div class="sources">
@@ -86,6 +88,12 @@
 
 <footer>
   Independent product breakdown by Sameer Mittimani. Facts from Rockstar Games and Take-Two Interactive public statements.
+  <span class="credit">Artwork and logos © Rockstar Games / Take-Two Interactive, from the official GTA VI wallpaper pack.</span>
 </footer>
+<script>
+  // Portrait artwork on phones, landscape elsewhere
+  const hero = document.getElementById("hero");
+  if (matchMedia("(max-width: 560px)").matches) hero.style.backgroundImage = "url('assets/day01-hero-phone.jpg')";
+</script>
 </body>
 </html>

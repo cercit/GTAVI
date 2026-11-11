@@ -5,9 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GTA VI: 9 product decisions</title>
 <meta name="description" content="A 9-day product breakdown of the decisions behind GTA VI, one per day until launch on 19 November 2026.">
+<meta property="og:title" content="GTA VI: 9 product decisions">
+<meta property="og:description" content="One product decision a day, until launch on 19 November.">
+<meta property="og:image" content="assets/hub-cover.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700;800;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <script src="days.js"></script>
 </head>
@@ -15,24 +18,30 @@
 
 <header class="topbar">
   <a class="brand" href="index.html">
-    <img src="assets/rockstar-logo.png" alt="Rockstar Games" onerror="logoFallback(this)">
-    <span class="wordmark" style="display:none">GTA VI</span>
+    <img src="assets/rockstar-logo.png" alt="Rockstar Games">
+    <span class="wordmark">gta <em>vi</em> · 9 decisions</span>
   </a>
   <nav><a href="#days">All 9 days</a><a href="https://samsm.vercel.app">About me</a></nav>
 </header>
 
-<section class="hero">
+<div class="cover">
+  <img src="assets/hub-cover.jpg" alt="Grand Theft Auto VI official cover art">
+</div>
+
+<section class="intro">
   <div class="wrap">
-    <img class="hero-logo" src="assets/gta-vi-logo.png" alt="Grand Theft Auto VI" onerror="logoFallback(this)">
-    <div class="sun" style="display:none"></div>
     <p class="kicker">Countdown to 19 November 2026</p>
-    <h1>9 product decisions</h1>
-    <p class="lede">GTA VI took 13 years. Every day until launch, I break down one decision Rockstar made and what a product manager can take from it. One new part goes live each day.</p>
+    <h1>9 product <em>decisions</em></h1>
+    <p class="lede">GTA VI took 13 years. Every day until launch, I break down one decision Rockstar made and what a product manager can take from it. A new part goes live each day.</p>
     <div class="countdown" id="countdown" aria-live="polite">
       <div><b id="cd-d">-</b><span>days</span></div>
       <div><b id="cd-h">-</b><span>hours</span></div>
       <div><b id="cd-m">-</b><span>minutes</span></div>
     </div>
+    <ul class="topics">
+      <li>The 13-year wait</li><li>GTA Online</li><li class="hot">RAGE engine</li><li>PC timing</li>
+      <li>Two delays</li><li>Silent marketing</li><li>$79.99 pricing</li><li>Industry ripple</li><li>Launch day</li>
+    </ul>
   </div>
 </section>
 
@@ -41,20 +50,26 @@
 </main>
 
 <footer>
-  Independent product breakdown by Sameer Mittimani. Facts from Rockstar Games and Take-Two Interactive public statements, sources on each page.
+  Independent product breakdown by Sameer Mittimani.
+  <span class="credit">Artwork and logos © Rockstar Games / Take-Two Interactive, from the official GTA VI wallpaper pack.</span>
 </footer>
 
 <script>
-  // Day tiles
   const grid = document.getElementById("days");
-  grid.innerHTML = DAYS.map(d => `
-    <a class="day ${d.live ? "" : "locked"}" href="${d.live ? d.file : "#"}" ${d.live ? "" : 'aria-disabled="true"'}>
-      <span class="tag ${d.live ? "live" : "soon"}">${d.live ? "Live" : "Soon"}</span>
-      <div class="num">${String(d.n).padStart(2, "0")}</div>
-      <div class="date">${d.date}</div>
-      <h3>${d.title}</h3>
-      <p>${d.live ? d.hook : "Goes live on " + d.date + "."}</p>
-    </a>`).join("");
+  grid.innerHTML = DAYS.map(d => {
+    const art = d.art || "hub-cover.jpg";
+    return `
+    <a class="day ${d.live ? "" : "locked"}" href="${d.live ? d.file : "#"}" ${d.live ? "" : 'aria-disabled="true" tabindex="-1"'}>
+      <div class="thumb" style="background-image:url('assets/${art}')"></div>
+      <span class="tag ${d.live ? "live" : "soon"}">${d.live ? "Live" : d.date}</span>
+      <div class="body">
+        <div class="num">${String(d.n).padStart(2, "0")}</div>
+        <div class="date">${d.date}</div>
+        <h3>${d.title}</h3>
+        <p>${d.live ? d.hook : "Goes live on " + d.date + "."}</p>
+      </div>
+    </a>`;
+  }).join("");
 
   // Countdown to launch day (midnight, viewer's local time)
   const launch = new Date(2026, 10, 19, 0, 0, 0);
