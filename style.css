@@ -363,3 +363,128 @@ body.theme-online {
 /* Up-next strip: labels always light on its dark fade */
 .up-next .label { color: #fff; }
 .theme-online .up-next .label { color: #fcaf17; background: transparent; }
+
+/* =========================================================
+   Day 3: RAGE engine. Graphite and blueprint grid, cool cyan light,
+   warm key light, mono "debug overlay" type, live light effects (engine.js).
+   ========================================================= */
+body.theme-engine {
+  --bg: #06080b; --bg-2: #0d1218; --bg-rgb: 6,8,11;
+  --text: #eaf6ff; --soft: #bccbd6; --muted: #93a7b6; --dim: #7f93a2;
+  --line: rgba(127,233,255,.16);
+  --pink: #7fe9ff; --orange: #ffd27a; --teal: #7fe9ff;
+  --sunset: linear-gradient(90deg, #ffffff 0%, #bff6ff 35%, #7fe9ff 60%, #3fa0ff 100%);
+  --mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --grain: .04;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(600px circle at var(--mx, 70%) var(--my, -20%), rgba(127,233,255,.07), transparent 60%),
+    linear-gradient(rgba(127,233,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(127,233,255,.035) 1px, transparent 1px);
+  background-size: auto, 48px 48px, 48px 48px;
+  background-attachment: fixed, scroll, scroll;
+}
+.theme-engine ::selection { background: #7fe9ff; color: #06080b; }
+.theme-engine .label { font-family: var(--mono); letter-spacing: .14em; }
+.theme-engine .nav .brand span { font-family: var(--mono); font-weight: 600; letter-spacing: .1em; font-size: 14px; }
+
+/* Hero: live canvas under the title */
+.hero-engine { background: #06080b; overflow: hidden; }
+.hero-engine canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; display: block; }
+.hero-engine::before { z-index: 1; background:
+  linear-gradient(0deg, var(--bg) 0%, rgba(var(--bg-rgb),.82) 20%, rgba(var(--bg-rgb),0) 50%),
+  linear-gradient(90deg, rgba(var(--bg-rgb),.7) 0%, rgba(var(--bg-rgb),0) 50%); }
+.hero-engine .wrap, .hero-engine .hud, .hero-engine .scroll-cue { z-index: 2; }
+.hero-engine .display { letter-spacing: .02em; }
+.hero-engine .display .glow { color: #fff; text-shadow: 0 0 18px rgba(127,233,255,.55), 0 0 60px rgba(127,233,255,.35); }
+.hero-engine .full { display: block; font-family: var(--mono); font-weight: 500; font-size: clamp(13px, 1.4vw, 17px); letter-spacing: .32em; text-transform: uppercase; color: #bff6ff; margin-top: 14px; text-shadow: none; }
+.hud {
+  position: absolute; top: 84px; right: 24px; font-family: var(--mono); font-size: 11px; line-height: 1.8;
+  letter-spacing: .08em; color: #9fe9f7; text-align: right; text-transform: uppercase;
+  background: rgba(6,8,11,.55); border: 1px solid var(--line); padding: 10px 14px;
+}
+.hud b { color: #fff; font-weight: 600; }
+.hud .tip { color: var(--orange); }
+
+/* Section heads read like render passes */
+.theme-engine .chapter-head { flex-direction: column; align-items: flex-start; gap: 8px; }
+.theme-engine .chapter-head .num { font-family: var(--mono); font-weight: 500; font-size: 12px; letter-spacing: .2em; color: var(--teal); }
+.theme-engine .chapter-head .num::before { content: "PASS "; }
+
+/* Light sweep across headings as they scroll in */
+.theme-engine .sweep {
+  background: linear-gradient(100deg, var(--text) 0%, var(--text) 40%, #ffffff 48%, #7fe9ff 50%, #ffffff 52%, var(--text) 60%, var(--text) 100%);
+  background-size: 300% 100%; background-position: 100% 0;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.theme-engine .sweep.lit { animation: sweep 1.6s ease-out forwards; }
+@keyframes sweep { from { background-position: 100% 0; } to { background-position: 0 0; } }
+
+/* Engine spec panel */
+.theme-engine .dossier {
+  border: 1px solid var(--line); border-top: 2px solid var(--teal); background: rgba(13,18,24,.75);
+  padding: 4px 24px 10px; position: relative;
+}
+.theme-engine .dossier::before { content: "ENGINE SPEC"; position: absolute; top: -11px; left: 18px; background: var(--bg); padding: 0 8px; font-family: var(--mono); font-size: 11px; letter-spacing: .2em; color: var(--teal); }
+.theme-engine .dossier dd { font-size: 16px; }
+
+/* Bands: an animated light pass sweeps across the art */
+.theme-engine .band { overflow: hidden; }
+.theme-engine .band .light-pass {
+  position: absolute; inset: -20% -40%; z-index: 0; pointer-events: none; mix-blend-mode: screen;
+  background: linear-gradient(105deg, transparent 40%, rgba(255,240,210,0) 44%, rgba(255,240,210,.32) 50%, rgba(127,233,255,.12) 54%, transparent 60%);
+  animation: lightpass 7s ease-in-out infinite;
+}
+@keyframes lightpass { 0% { transform: translateX(-60%); } 60%, 100% { transform: translateX(60%); } }
+.theme-engine .band .quote { text-shadow: 0 0 30px rgba(6,8,11,.9), 0 2px 4px rgba(0,0,0,.6); }
+
+/* Build vs buy */
+.vs { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin: 10px 0 0; border: 1px solid var(--line); }
+.vs > div { padding: 24px; }
+.vs > div + div { border-left: 1px solid var(--line); }
+.vs h4 { margin: 0 0 4px; font-family: var(--head); font-weight: 800; font-stretch: 75%; font-variation-settings: "wdth" 70; text-transform: uppercase; font-size: 26px; }
+.vs .who { font-family: var(--mono); font-size: 12px; color: var(--teal); letter-spacing: .1em; text-transform: uppercase; }
+.vs ul { margin: 14px 0 0; padding: 0; list-style: none; }
+.vs li { padding: 9px 0 9px 22px; border-top: 1px solid var(--line); position: relative; color: var(--soft); font-size: 16px; }
+.vs li::before { position: absolute; left: 0; font-family: var(--mono); }
+.vs li.plus::before { content: "+"; color: var(--teal); }
+.vs li.minus::before { content: "\2212"; color: var(--orange); }
+.vs .build { background: linear-gradient(180deg, rgba(127,233,255,.08), transparent 60%); }
+
+/* Frame demo */
+.frame-demo { margin: 14px 0 0; border: 1px solid var(--line); background: #000; }
+.frame-demo canvas { display: block; width: 100%; height: auto; }
+.frame-demo .bar { display: flex; flex-wrap: wrap; gap: 0; border-top: 1px solid var(--line); }
+.frame-demo button {
+  flex: 1 1 0; min-width: 110px; padding: 12px 10px; background: transparent; color: var(--muted); border: 0; border-right: 1px solid var(--line);
+  font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; cursor: pointer;
+}
+.frame-demo button:last-child { border-right: 0; }
+.frame-demo button[aria-pressed="true"] { color: #06080b; background: var(--teal); }
+.frame-demo button:hover { color: var(--text); }
+.frame-demo button[aria-pressed="true"]:hover { color: #06080b; }
+.frame-demo button:focus-visible { outline: 2px solid var(--orange); outline-offset: -2px; }
+.frame-demo .note { padding: 14px 18px; font-size: 15px; color: var(--soft); border-top: 1px solid var(--line); min-height: 76px; }
+
+/* Numbers, log, quote */
+.theme-engine .stat b { text-shadow: 0 0 28px rgba(127,233,255,.25); }
+.theme-engine .ledger .when { font-family: var(--mono); letter-spacing: .06em; color: var(--teal); }
+.theme-engine .ledger li.big .when { color: var(--orange); }
+.theme-engine .ledger li .tag { font-family: var(--mono); font-size: 11px; color: var(--orange); border: 1px solid rgba(255,210,122,.4); padding: 1px 6px; margin-left: 8px; letter-spacing: .08em; white-space: nowrap; }
+.theme-engine blockquote { margin: 24px 0; padding: 18px 22px; border-left: 2px solid var(--orange); background: rgba(255,210,122,.06); font-size: 19px; color: var(--text); }
+.theme-engine blockquote cite { display: block; margin-top: 10px; font-style: normal; font-family: var(--mono); font-size: 12px; letter-spacing: .08em; color: var(--muted); }
+.theme-engine .concept { border-top: 2px solid var(--orange); }
+.theme-engine .concept .label { color: var(--orange); }
+
+@media (max-width: 720px) {
+  .hud { top: 70px; right: 12px; font-size: 10px; padding: 8px 10px; }
+  .vs { grid-template-columns: 1fr; }
+  .vs > div + div { border-left: 0; border-top: 1px solid var(--line); }
+  .frame-demo button { min-width: 33%; flex: 1 1 33%; border-bottom: 1px solid var(--line); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .theme-engine .band .light-pass { animation: none; display: none; }
+  .theme-engine .sweep { color: var(--text); background: none; }
+}
+.hero-engine .full { line-height: 1.5; }
+@media (max-width: 720px) { .hero-engine .full { letter-spacing: .18em; font-size: 12px; } }
