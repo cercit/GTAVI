@@ -1,10 +1,15 @@
 name: Publish today's product
 
-# 09:15 UTC = 2:45 pm IST, every day 12–19 November.
-# Leaves a 15-minute buffer so the page is live by 3 pm even if GitHub starts the job late.
+# Times are UTC. IST = UTC + 5:30. Each run is 15 minutes early, as a buffer
+# in case GitHub starts the job late.
+#   12 Nov: 09:15 UTC = 2:45 pm IST (live by 3 pm, post at 4 pm)
+#   13 Nov: 08:15 UTC = 1:45 pm IST (live by 2 pm, post at 3 pm)
+#   14-19 Nov: 09:15 UTC = 2:45 pm IST (change per day if the post time changes)
 on:
   schedule:
-    - cron: "15 9 12-19 11 *"
+    - cron: "15 9 12 11 *"
+    - cron: "15 8 13 11 *"
+    - cron: "15 9 14-19 11 *"
   workflow_dispatch:
     inputs:
       day:
