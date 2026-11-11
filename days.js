@@ -6,7 +6,7 @@ const DAYS = [
     hook: "The game that kept earning for 13 years." },
   { n: 2, date: "12 Nov", file: "day-02.html", live: false, title: "GTA Online",
     hook: "The free mode that turned a game into a business." },
-  { n: 3, date: "13 Nov", file: "day-03.html", live: true, title: "RAGE engine",
+  { n: 3, date: "13 Nov", file: "day-03.html", live: false,title: "RAGE engine",
     hook: "Rockstar's own engine, under every game they make." },
   { n: 4, date: "14 Nov", file: "day-04.html", live: false, title: "Social Club",
     hook: "The account layer that ties players together." },
