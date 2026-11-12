@@ -968,3 +968,8 @@ body.theme-shark {
 .s-hero .wrap > div { min-width: 0; }
 @media (max-width: 900px) { .fan { margin: 0 -18px; width: calc(100% + 36px); } }
 @media (max-width: 900px) { .fan { padding-left: 18px !important; padding-right: 18px; } }
+
+/* Banners: anchor art near the top so faces are not cut off on wide screens (band-top keeps its own position) */
+.band:not(.band-top) { background-position: 50% 18%; }
+/* Up-next strips: same idea, keep faces in frame */
+.up-next { background-position: 50% 14%; }
