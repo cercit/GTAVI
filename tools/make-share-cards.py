@@ -23,6 +23,7 @@ CARDS = {
     2: ("assets/o-cover.jpg", "10% 50%"),
     3: ("assets/r-share.jpg", "70% 50%"),
     4: ("assets/a-hero.jpg", "60% 20%"),
+    5: ("assets/l-hero.jpg", "45% 30%"),
 }
 
 

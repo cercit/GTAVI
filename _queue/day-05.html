@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- DRAFT: delete the next line when moving this file to the root to publish -->
+<base href="../">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Rockstar Games Launcher, and why Rockstar wanted its own PC store | Day 5 of 9 Rockstar products</title>
+<meta name="description" content="The Rockstar Games Launcher broken down as a product: Rockstar's own PC store, and the fee it avoids. Day 5 of 9 Rockstar products.">
+<meta property="og:title" content="Day 5: The Rockstar Games Launcher, and why Rockstar wanted its own PC store">
+<meta property="og:image" content="https://cercit.github.io/GTAVI/assets/share-d05.jpg">
+<!-- Sharing and search tags -->
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:description" content="The Rockstar Games Launcher broken down as a product: Rockstar's own PC store, and the fee it avoids. Day 5 of 9 Rockstar products.">
+<meta property="og:url" content="https://cercit.github.io/GTAVI/day-05.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="9 Rockstar products, by Sameer Mittimani">
+<meta property="article:published_time" content="2026-11-15">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="author" content="Sameer Mittimani">
+<link rel="canonical" href="https://cercit.github.io/GTAVI/day-05.html">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Day 5: The Rockstar Games Launcher, and why Rockstar wanted its own PC store", "description": "The Rockstar Games Launcher broken down as a product: Rockstar's own PC store, and the fee it avoids. Day 5 of 9 Rockstar products.", "datePublished": "2026-11-15", "inLanguage": "en", "image": "https://cercit.github.io/GTAVI/assets/share-d05.jpg", "mainEntityOfPage": "https://cercit.github.io/GTAVI/day-05.html", "author": {"@type": "Person", "name": "Sameer Mittimani", "url": "https://samsm.vercel.app/"}, "isPartOf": {"@type": "WebSite", "name": "9 Rockstar products", "url": "https://cercit.github.io/GTAVI/"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,700..900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="days.js"></script>
+<script src="launcher.js"></script>
+</head>
+<body class="theme-launcher">
+
+<header class="nav">
+  <a class="brand" href="index.html"><img src="assets/rockstar-logo.png" alt="Rockstar Games"><span>9 Products</span></a>
+  <nav class="links"><a href="index.html#select">All days</a><a href="https://samsm.vercel.app">About me</a></nav>
+</header>
+
+<section class="l-hero" id="hero">
+  <div class="art" style="background-image:url('assets/l-hero.jpg')"></div>
+  <div class="wrap">
+    <div class="intro">
+      <div class="meta"><span class="label">Product 05 / 09</span><span class="label">15 November</span></div>
+      <h1 class="display">Rockstar Games Launcher</h1>
+      <p class="lede">A free Windows app, released on 17 September 2019, that put Rockstar's PC games, its shop, updates and cloud saves in one place. It's also how Rockstar sells to PC players without handing a store its cut.</p>
+    </div>
+
+    <div class="appwin" aria-label="A mock-up of the launcher window">
+      <div class="appbar"><img src="assets/rockstar-logo.png" alt=""><span>Rockstar Games Launcher</span><span class="wc" aria-hidden="true">— ▢ ✕</span></div>
+      <div class="appbody">
+        <div class="appside" aria-hidden="true"><span class="on">Library</span><span>Store</span><span>Downloads</span><span>Friends</span><span>Settings</span></div>
+        <div class="applib" role="group" aria-label="Games in the library">
+          <button class="lib-tile" style="background-image:url('assets/t-d01.jpg')" data-title="Grand Theft Auto V" data-sub="Bought it on Steam? It still opens through here. Steam handles the download; this app is in the path." data-size="Installed · via Steam" data-installed="yes" aria-pressed="true"><span>GTA V</span></button>
+          <button class="lib-tile" style="background-image:url('assets/t-d02.jpg')" data-title="GTA Online" data-sub="GTA+ arrived on PC for the first time in March 2025, with GTA V Enhanced." data-size="Update available" data-installed="no" aria-pressed="false"><span>GTA Online</span></button>
+          <button class="lib-tile t-rdr2" data-title="Red Dead Redemption 2" data-sub="PC pre-orders were only on this launcher from 9 to 22 October 2019. It reached Steam a month after launch." data-size="Pre-load" data-installed="no" aria-pressed="false"><span>Red Dead Redemption 2</span></button>
+          <button class="lib-tile t-rdr" data-title="Red Dead Redemption" data-sub="The 2010 original finally came to PC in October 2024." data-size="Installed" data-installed="yes" aria-pressed="false"><span>Red Dead Redemption</span></button>
+          <button class="lib-tile t-iv" data-title="GTA IV: Complete Edition" data-sub="Re-released in March 2020 without the old Games for Windows Live requirement." data-size="Installed" data-installed="yes" aria-pressed="false"><span>GTA IV</span></button>
+          <button class="lib-tile t-tri" data-title="GTA: The Trilogy" data-sub="Pulled from PC sale days after its November 2021 launch, over files left in by mistake." data-size="Downloading" data-installed="no" aria-pressed="false"><span>GTA Trilogy</span></button>
+        </div>
+        <div class="appdetail">
+          <span class="label" id="dl-size">Installed</span>
+          <h3 id="app-title">Grand Theft Auto V</h3>
+          <p id="app-sub"></p>
+          <div class="dl">
+            <div class="row-d"><span id="dl-pct">Ready</span><span>Rockstar Games Launcher</span></div>
+            <div class="track"><div class="fill" id="dl-bar"></div></div>
+            <button id="dl-btn" class="ready">Play</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="wrap">
+<div class="l-layout">
+  <nav class="l-side" aria-label="Sections">
+    <a href="#s1">Who it's for</a><a href="#s2">The problem</a><a href="#s3">How it makes money</a><a href="#s4">Changelog</a><a href="#s5">What I'd change</a><a href="#concept">Learn this</a>
+  </nav>
+  <div class="l-main">
+    <section class="chapter" style="padding-top:96px">
+      <dl class="dossier rise">
+        <div><dt class="label">Type</dt><dd>Free Windows app: library, shop, updates, cloud saves</dd></div>
+        <div><dt class="label">Launched</dt><dd>17 Sep 2019, with free GTA San Andreas</dd></div>
+        <div><dt class="label">Platform</dt><dd>Windows PC only</dd></div>
+        <div><dt class="label">Price</dt><dd>Free</dd></div>
+        <div><dt class="label">Makes money by</dt><dd>Selling Rockstar's PC games directly, plus GTA+ and in-game money</dd></div>
+        <div><dt class="label">PM concept</dt><dd>Distribution, and the store cut</dd></div>
+      </dl>
+    </section>
+
+    <section class="chapter" id="s1">
+      <div class="chapter-head"><span class="num">01</span><h2 class="display">Who it's for</h2></div>
+      <div class="panels">
+        <div class="pane rise"><span class="tag">Owners</span><h4>People who already have Rockstar PC games</h4><p>One library for everything, including copies bought on Steam or on disc, with updates and a Play button.</p></div>
+        <div class="pane rise"><span class="tag">Buyers</span><h4>People buying direct</h4><p>Rockstar's own shop, and sometimes launcher-only offers, like the 2019 Red Dead Redemption 2 pre-orders.</p></div>
+        <div class="pane rise"><span class="tag">GTA Online</span><h4>PC players of GTA Online</h4><p>Since March 2025, GTA V Enhanced brought GTA+ to PC for the first time.</p></div>
+        <div class="pane rise"><span class="tag">Social</span><h4>Players who play with friends</h4><p>The November 2026 update added an in-game overlay, friend chat, Discord friend import, Streamer Mode and controller support.</p></div>
+      </div>
+    </section>
+
+    <section class="chapter col" id="s2">
+      <div class="chapter-head"><span class="num">02</span><h2 class="display">The problem it solved</h2></div>
+      <p><strong>For players:</strong> a Rockstar PC collection used to be split across Steam, old discs and a separate Rockstar account. The launcher promised one shelf: find your games, keep them updated, sync your saves.</p>
+      <p><strong>For Rockstar:</strong> every game sold on someone else's store pays that store a share. Steam's standard cut is 30%. A store of your own means you keep the sale, you know the buyer, and you can run your own offers. Rockstar never published a strategy note saying this, but its first big move was clear: Red Dead Redemption 2 PC pre-orders were launcher-only for two weeks.</p>
+    </section>
+
+    <section class="band" style="background-image:url('assets/l-hero.jpg')">
+      <div class="wrap"><p class="quote rise">Rockstar didn't leave Steam. It made sure every road still led back to its own app.</p></div>
+    </section>
+
+    <section class="chapter" id="s3">
+      <div class="chapter-head"><span class="num">03</span><h2 class="display">How it makes money</h2></div>
+      <div class="col"><p>The app is free. The money is in what gets sold through it: games, editions, GTA+ ($7.99 a month on the launcher store) and in-game money. Rockstar has never said how much. So here's the part you can work out: what a store's cut means at Rockstar's scale. Move the sliders.</p></div>
+      <div class="fee rise">
+        <div class="ctl">
+          <div><label for="fee-price">Price per copy <b id="fee-price-v">$59.99</b></label><input id="fee-price" type="range" min="19.99" max="99.99" step="10" value="59.99"></div>
+          <div><label for="fee-copies">Copies sold on PC <b id="fee-copies-v">5 million copies</b></label><input id="fee-copies" type="range" min="1" max="20" step="1" value="5"></div>
+        </div>
+        <div class="rows">
+          <div class="r"><span class="n">Sold on Steam<small>30%, dropping to 25% and 20% at higher sales</small></span><span class="t"><i id="bar-steam"></i></span><b id="keep-steam">–</b></div>
+          <div class="r"><span class="n">Sold on Epic<small>12% to the store</small></span><span class="t"><i id="bar-epic"></i></span><b id="keep-epic">–</b></div>
+          <div class="r own"><span class="n">Sold on its own launcher<small>no store cut, only payment costs</small></span><span class="t"><i id="bar-own"></i></span><b id="keep-own">–</b></div>
+        </div>
+        <p class="sum">At these numbers, the Steam cut alone is <b id="fee-gap">–</b>.</p>
+      </div>
+      <p class="bcg-note">What the publisher keeps before payment processing and taxes. Uses Steam's and Epic's published store fees; prices and copies are yours to choose, not Rockstar data.</p>
+    </section>
+
+    <section class="chapter" id="s4">
+      <div class="chapter-head"><span class="num">04</span><h2 class="display">Changelog</h2></div>
+      <div class="stats">
+        <div class="stat"><b class="grad">2019</b><span>launched 17 September, with free GTA San Andreas</span></div>
+        <div class="stat"><b class="grad">"Millions"</b><span>downloads in the first three weeks, Rockstar's own word. No exact number has ever been published</span></div>
+        <div class="stat"><b class="grad">14 days</b><span>Red Dead Redemption 2 PC pre-orders were launcher-only</span></div>
+      </div>
+      <ul class="log" style="margin-top:14px">
+        <li><span class="v">17 Sep 2019</span><span>Launch: library, shop, cloud saves, automatic updates, free GTA San Andreas</span></li>
+        <li><span class="v">9–22 Oct 2019</span><span>Red Dead Redemption 2 PC pre-orders only on the launcher</span></li>
+        <li class="bad"><span class="v">5 Nov 2019</span><span>Red Dead Redemption 2 PC launch: "the launcher exited unexpectedly" errors, patched the same day</span></li>
+        <li><span class="v">5 Dec 2019</span><span>Red Dead Redemption 2 reaches Steam</span></li>
+        <li><span class="v">Mar 2020</span><span>GTA IV Complete Edition, freed from Games for Windows Live</span></li>
+        <li class="bad"><span class="v">Nov 2021</span><span>GTA Trilogy pulled from PC sale; the launcher goes down for maintenance and some players can't start other Rockstar games</span></li>
+        <li class="bad"><span class="v">Sep 2024</span><span>New anti-cheat for GTA Online on PC; Steam Deck and Linux players lose online access</span></li>
+        <li><span class="v">Oct 2024</span><span>Red Dead Redemption comes to PC</span></li>
+        <li><span class="v">4 Mar 2025</span><span>GTA V Enhanced, and GTA+ on PC for the first time</span></li>
+        <li><span class="v">3 Nov 2026</span><span>New overlay: friend chat, Discord friends, Streamer Mode, controller support. GTA VI has no PC version announced.</span></li>
+      </ul>
+    </section>
+
+    <section class="chapter col" id="s5">
+      <div class="chapter-head"><span class="num">05</span><h2 class="display">What I'd change</h2></div>
+      <p>The launcher's job is to own the PC relationship. The problem is where it sits: between people and games they already paid for. A Steam copy of GTA V still has to start through it. So every time it broke, at the Red Dead Redemption 2 launch, during the 2021 maintenance, it stopped people playing games they owned, including offline single-player ones.</p>
+      <p>As a PM, I'd earn the install instead of forcing it. Let single-player games bought elsewhere start without it. Make it worth opening: the 2026 overlay, with chat, Discord friends and Streamer Mode, is exactly that kind of reason. And design every outage so that offline play keeps working.</p>
+    </section>
+
+    <section class="concept" id="concept">
+      <span class="label">PM concept · Learn this</span>
+      <h3>Distribution, and the store cut</h3>
+      <div class="col">
+        <p><strong>Distribution</strong> is how a product reaches its customers. Big stores like Steam bring you an audience, and charge for it: 30% of each sale, less at high volumes. Epic charges 12%. Your own store keeps nearly everything, but only works if people already want what you sell enough to install your app.</p>
+        <p>Rockstar has that pull, so the launcher makes sense. But it never went launcher-only: Red Dead Redemption 2 reached Steam a month later, and Red Dead Redemption launched on Steam and Epic too. Reach still matters.</p>
+        <p>The question for any PM: is it worth annoying some users to keep the store fee? Only if your product is strong enough that they come anyway, and only if you keep the doors open on the big stores too.</p>
+      </div>
+    </section>
+
+    <p class="sources">Facts from Rockstar Newswire, Rockstar Support, Take-Two Interactive filings, Epic Games, and coverage by Eurogamer, PC Gamer, IGN and Ars Technica, cross-checked across three research sources on 12 November 2026. Rockstar has never published launcher users, downloads or revenue, so this page doesn't either.</p>
+  </div>
+</div>
+</main>
+
+<a class="up-next locked" href="index.html#select" style="background-image:url('assets/d06.jpg')">
+  <div class="wrap">
+    <span class="label">Up next · Product 06 · 16 November</span>
+    <h2 class="display">Shark Cards</h2>
+    <p>Selling in-game money for real money.</p>
+  </div>
+</a>
+
+<footer>
+  <b>Independent product breakdown by Sameer Mittimani.</b><br>
+  Artwork and logos © Rockstar Games / Take-Two Interactive.
+</footer>
+<script type="application/json" id="day-meta">
+{
+  "n": 5,
+  "category": "PC store",
+  "layer": "platform",
+  "art": "assets/l-hero.jpg",
+  "theme": {
+    "bg": "#0f0f12",
+    "ink": "#f2f2f4",
+    "soft": "#c9c9d1",
+    "muted": "#a2a2ad",
+    "accent": "#fcaf17",
+    "on": "#111111",
+    "line": "rgba(255,255,255,.12)",
+    "plain": true
+  },
+  "stat": {
+    "value": "14 days",
+    "label": "Red Dead Redemption 2 PC pre-orders were launcher-only"
+  },
+  "pull": "Rockstar didn't leave Steam. It made sure every road still led back to its own app.",
+  "concept": {
+    "name": "Distribution, and the store cut",
+    "what": "Distribution is how a product reaches its customers. Big stores like Steam bring you an audience, and charge for it: 30% of each sale, less at high volumes.",
+    "question": "Is it worth annoying some users to keep the store fee?",
+    "answer": "Only if your product is strong enough that they come anyway, and only if you keep the doors open on the big stores too."
+  },
+  "links": [
+    { "to": 1, "type": "distribution", "basis": "fact", "text": "A Steam copy of GTA V still has to start through it." },
+    { "to": 4, "type": "platform", "basis": "fact", "text": "A Rockstar PC collection used to be split across Steam, old discs and a separate Rockstar account." },
+    { "to": 7, "type": "revenue", "basis": "fact", "text": "Since March 2025, GTA V Enhanced brought GTA+ to PC for the first time." },
+    { "to": 6, "type": "revenue", "basis": "fact", "text": "The money is in what gets sold through it: games, editions, GTA+ ($7.99 a month on the launcher store) and in-game money." },
+    { "to": 9, "type": "strategy", "basis": "open", "text": "GTA VI has no PC version announced." }
+  ]
+}
+</script>
+</body>
+</html>
