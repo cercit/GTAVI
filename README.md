@@ -22,7 +22,7 @@ Plain HTML, CSS and JavaScript on GitHub Pages. No build step, no backend.
 
 ## Publishing a day
 
-Each day publishes itself (GitHub Action `publish-day.yml`): 2:45 pm IST on 12 and 15–19 Nov, 1:45 pm IST on 13 Nov, 11:45 am IST on 14 Nov.
+Each day publishes itself (GitHub Action `publish-day.yml`): 2:45 pm IST on 12 and 16–19 Nov, 1:45 pm IST on 13 Nov, 11:45 am IST on 14 Nov, 10:45 am IST on 15 Nov.
 
 1. Build the page ahead in `drafts/` (not pushed), then move it to `_queue/day-NN.html` and push.
    `_queue/` starts with `_`, so GitHub Pages doesn't serve it: it stays hidden.
