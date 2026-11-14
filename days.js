@@ -8,7 +8,7 @@ const DAYS = [
     hook: "The free mode that turned a game into a business." },
   { n: 3, date: "13 Nov", file: "day-03.html", live: true, title: "RAGE engine",
     hook: "Rockstar's own engine, under every game they make." },
-  { n: 4, date: "14 Nov", file: "day-04.html", live: false, title: "Rockstar Games account",
+  { n: 4, date: "14 Nov", file: "day-04.html", live: true, title: "Rockstar Games account",
     hook: "Social Club, renamed in 2023: one login across every Rockstar game." },
   { n: 5, date: "15 Nov", file: "day-05.html", live: false, title: "Rockstar Games Launcher",
     hook: "Owning the PC store instead of renting one." },
