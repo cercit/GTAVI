@@ -12,7 +12,7 @@ const DAYS = [
     hook: "Social Club, renamed in 2023: one login across every Rockstar game." },
   { n: 5, date: "15 Nov", file: "day-05.html", live: true, title: "Rockstar Games Launcher",
     hook: "Owning the PC store instead of renting one." },
-  { n: 6, date: "16 Nov", file: "day-06.html", live: false, title: "Shark Cards",
+  { n: 6, date: "16 Nov", file: "day-06.html", live: true, title: "Shark Cards",
     hook: "Selling in-game money for real money." },
   { n: 7, date: "17 Nov", file: "day-07.html", live: false, title: "GTA+",
     hook: "A monthly subscription inside a game people already own." },
