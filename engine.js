@@ -119,7 +119,7 @@
   async function passes() {
     const cv = document.getElementById("rage-passes"); if (!cv) return;
     const img = await load(cv.dataset.src);
-    const base = canvasOf(img, 960);
+    const base = canvasOf(img, Math.min(img.width, 1600));
     const lum = (p, i) => 0.3 * p[i] + 0.59 * p[i + 1] + 0.11 * p[i + 2];
     const P = {
       wire: edges(base),
@@ -130,11 +130,18 @@
         const l = lum(p, i), k = 0.55; for (let c = 0; c < 3; c++) p[i + c] = Math.min(255, (p[i + c] - l) * 1.1 + 150 * k + l * (1 - k) * 0.6); } }),
       light: mapPixels(base, p => { for (let i = 0; i < p.length; i += 4) {
         const l = lum(p, i), v = Math.min(255, Math.pow(l / 255, 1.6) * 330); p[i] = v; p[i + 1] = v * 0.93; p[i + 2] = v * 0.8; } }),
-      final: (() => { const c = document.createElement("canvas"); c.width = base.width; c.height = base.height;
+      final: (() => { const w = base.width, h = base.height;
+        // Soft glow: keep only the bright parts (smooth ramp, no hard edge), shrink them a lot, then
+        // stretch back up so they blur evenly, and lay that over the picture. Plus a light colour grade.
+        const bright = mapPixels(base, p => { for (let i = 0; i < p.length; i += 4) { const l = lum(p, i), k = Math.max(0, Math.min(1, (l - 170) / 70)); for (let q = 0; q < 3; q++) p[i + q] *= k * k; } });
+        const sm = document.createElement("canvas"); sm.width = Math.max(1, w >> 4); sm.height = Math.max(1, h >> 4);
+        const sx = sm.getContext("2d"); sx.imageSmoothingQuality = "high"; sx.drawImage(bright, 0, 0, sm.width, sm.height);
+        const c = document.createElement("canvas"); c.width = w; c.height = h;
         const x = c.getContext("2d"); x.drawImage(base, 0, 0);
-        const bright = mapPixels(base, p => { for (let i = 0; i < p.length; i += 4) { const l = lum(p, i); const k = l > 185 ? 1 : 0; for (let q = 0; q < 3; q++) p[i + q] *= k; } });
-        x.globalCompositeOperation = "lighter"; x.globalAlpha = 0.35;
-        for (const o of [[-4, 0], [4, 0], [0, -4], [0, 4], [-8, -8], [8, 8]]) x.drawImage(bright, o[0], o[1]);
+        x.imageSmoothingEnabled = true; x.imageSmoothingQuality = "high";
+        x.globalCompositeOperation = "screen"; x.globalAlpha = 0.45; x.drawImage(sm, 0, 0, w, h);
+        x.globalCompositeOperation = "soft-light"; x.globalAlpha = 0.18; x.fillStyle = "#ffb36b"; x.fillRect(0, 0, w, h);
+        x.globalCompositeOperation = "source-over"; x.globalAlpha = 1;
         return c; })()
     };
     const ctx = cv.getContext("2d"); cv.width = base.width; cv.height = base.height;
