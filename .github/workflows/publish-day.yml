@@ -7,7 +7,8 @@ name: Publish today's product
 #   14 Nov: 06:15 UTC = 11:45 am IST (live by 12 pm, post at 1 pm)
 #   15 Nov: 05:15 UTC = 10:45 am IST (live by 11 am, post at 12 pm)
 #   16 Nov: 04:45 UTC = 10:15 am IST (live by 10:30 am, post at 11:30 am)
-#   17-19 Nov: 09:15 UTC = 2:45 pm IST (change per day if the post time changes)
+#   17 Nov: 02:30 + 03:00 UTC = 8:00 / 8:30 am IST (live by 9 am, post at 10 am; started early because GitHub runs late)
+#   18-19 Nov: 09:15 UTC = 2:45 pm IST (change per day if the post time changes)
 # Each day also has a backup run 30 minutes later, because GitHub sometimes
 # skips scheduled runs (the 12 Nov run never started). If the day is already
 # live, the backup run does nothing.
@@ -22,8 +23,10 @@ on:
     - cron: "45 5 15 11 *"
     - cron: "45 4 16 11 *"
     - cron: "15 5 16 11 *"
-    - cron: "15 9 17-19 11 *"
-    - cron: "45 9 17-19 11 *"
+    - cron: "30 2 17 11 *"
+    - cron: "0 3 17 11 *"
+    - cron: "15 9 18-19 11 *"
+    - cron: "45 9 18-19 11 *"
   workflow_dispatch:
     inputs:
       day:
