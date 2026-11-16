@@ -26,6 +26,7 @@ CARDS = {
     5: ("assets/l-hero.jpg", "45% 30%"),
     6: ("assets/s-hero.jpg", "50% 30%"),
     7: ("assets/p-hero.jpg", "60% 20%"),
+    8: ("assets/f-hero.jpg", "50% 35%"),
 }
 
 
