@@ -16,7 +16,7 @@ const DAYS = [
     hook: "Selling in-game money for real money." },
   { n: 7, date: "17 Nov", file: "day-07.html", live: true, title: "GTA+",
     hook: "A monthly subscription inside a game people already own." },
-  { n: 8, date: "18 Nov", file: "day-08.html", live: false, title: "FiveM",
+  { n: 8, date: "18 Nov", file: "day-08.html", live: true, title: "FiveM",
     hook: "The mod platform Rockstar bought instead of shutting down." },
   { n: 9, date: "19 Nov", file: "day-09.html", live: false, title: "GTA VI",
     hook: "Launch day, and how the other eight come together." },
