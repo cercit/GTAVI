@@ -236,7 +236,7 @@
           d = `M${x1} ${P.b} C${x1} ${P.b + h1 * 0.6} ${lx} ${my - h1 * 0.5} ${lx} ${my} C${lx} ${my + h2 * 0.5} ${x2} ${Q.t - h2 * 0.6} ${x2} ${Q.t}`;
         } else d = `M${x1} ${P.b} C${x1} ${P.b + dy * 0.55} ${x2} ${Q.t - dy * 0.55} ${x2} ${Q.t}`;
       }
-      out += `<path class="w ${l.basis}" data-i="${i}" stroke="${TYPES[l.type][1]}" d="${d}"/><path class="hit" data-i="${i}" d="${d}"><title>${esc(byN(l.a).title)} and ${esc(byN(l.b).title)}: ${TYPES[l.type][0]}</title></path>`;
+      out += `<path class="w ${l.basis}${k ? " dup" : ""}" data-i="${i}" stroke="${TYPES[l.type][1]}" d="${d}"/><path class="hit" data-i="${i}" d="${d}"><title>${esc(byN(l.a).title)} and ${esc(byN(l.b).title)}: ${TYPES[l.type][0]}</title></path>`;
     }));
     svg.innerHTML = out;
     ecoApply();
