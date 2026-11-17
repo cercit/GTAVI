@@ -14,7 +14,7 @@ const DAYS = [
     hook: "Owning the PC store instead of renting one." },
   { n: 6, date: "16 Nov", file: "day-06.html", live: true, title: "Shark Cards",
     hook: "Selling in-game money for real money." },
-  { n: 7, date: "17 Nov", file: "day-07.html", live: false, title: "GTA+",
+  { n: 7, date: "17 Nov", file: "day-07.html", live: true, title: "GTA+",
     hook: "A monthly subscription inside a game people already own." },
   { n: 8, date: "18 Nov", file: "day-08.html", live: false, title: "FiveM",
     hook: "The mod platform Rockstar bought instead of shutting down." },
