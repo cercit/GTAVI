@@ -261,13 +261,13 @@
       const n = +el.dataset.n, on = !!sel && sel.kind === "node" && sel.n === n;
       el.classList.toggle("on", on); el.classList.toggle("rel", !!relN(n)); el.setAttribute("aria-pressed", on);
     });
-    $$(".w", board).forEach(p => p.classList.toggle("rel", !!rel(links[+p.dataset.i])));
+    $$(".w, .hit", board).forEach(p => p.classList.toggle("rel", !!rel(links[+p.dataset.i])));
 
     const shown = links.filter(visible), nodes = $$(".node", board).length;
     if (!sel) {
       panel.innerHTML = `<p class="label">How to read it</p><h3>${nodes > 1 ? "Pick a product" : "One product so far"}</h3>
-        <p>${nodes > 1 ? "Select a product on the map to see what it connects to, and which breakdown each connection comes from. You can also select a line." : "Connections appear when the second product unlocks. Each new breakdown adds its own lines to this map."}</p>
-        ${nodes > 1 ? `<div class="conn"><p class="who">${nodes} products · ${shown.length} ${shown.length === 1 ? "connection" : "connections"} showing</p><p>Solid lines are checked facts. Dashed lines are my read. Dotted lines are open questions.</p></div>` : ""}`;
+        <p>${nodes > 1 ? "Select a product on the map. Its connections appear as lines, and each one shows which breakdown it comes from." : "Connections appear when the second product unlocks. Each new breakdown adds its own lines to this map."}</p>
+        ${nodes > 1 ? `<div class="conn"><p class="who">${nodes} products · ${shown.length} ${shown.length === 1 ? "connection" : "connections"} between them</p><p>Solid lines are checked facts. Dashed lines are my read. Dotted lines are open questions.</p></div>` : ""}`;
     } else if (sel.kind === "node") {
       const d = byN(sel.n), mine = shown.filter(l => touches(l, d.n));
       panel.innerHTML = `<p class="label">Product ${pad(d.n)} · ${esc(d.meta.category)}</p><h3>${esc(d.title)}</h3><p>${esc(d.hook)}</p>
